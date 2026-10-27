@@ -55,6 +55,13 @@ async function copyArticleLink() {
 copyButton.addEventListener('click', copyArticleLink);
 printButton.addEventListener('click', () => window.print());
 
+const meta = document.querySelector('.meta');
+if (meta && ![...meta.children].some((item) => item.textContent.trim() === 'By Dave Lim')) {
+  const byline = document.createElement('span');
+  byline.textContent = 'By Dave Lim';
+  meta.prepend(byline);
+}
+
 const wordCount = article.innerText.trim().split(/\s+/).filter(Boolean).length;
 const minutes = Math.max(1, Math.round(wordCount / 220));
 document.querySelector('.meta span:last-child').textContent = `${minutes}-minute read`;
