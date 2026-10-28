@@ -78,3 +78,10 @@ if("IntersectionObserver" in window&&!prefersReduced){const io=new IntersectionO
 function countUp(el){const target=+el.dataset.target,t0=performance.now(),dur=1400;function f(t){const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=Math.round(target*e).toLocaleString("en-US");if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
 const statVals=document.querySelectorAll(".stat-val");
 if(statVals.length){if("IntersectionObserver" in window&&!prefersReduced){statVals.forEach(el=>el.textContent="0");const so=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){so.unobserve(e.target);countUp(e.target)}})},{threshold:.4});statVals.forEach(el=>so.observe(el))}else{statVals.forEach(el=>el.textContent=(+el.dataset.target).toLocaleString("en-US"))}}
+
+// Theme toggle
+const themeBtn=document.getElementById("themeToggle"),rootEl=document.documentElement;
+function setThemeLabel(){themeBtn&&(themeBtn.textContent=rootEl.classList.contains("dark")?"Light":"Dark")}
+try{const savedTheme=localStorage.getItem("fn-theme");if(savedTheme==="dark"||(!savedTheme&&window.matchMedia("(prefers-color-scheme: dark)").matches))rootEl.classList.add("dark")}catch(e){}
+setThemeLabel();
+themeBtn?.addEventListener("click",()=>{rootEl.classList.toggle("dark");try{localStorage.setItem("fn-theme",rootEl.classList.contains("dark")?"dark":"light")}catch(e){}setThemeLabel()});
