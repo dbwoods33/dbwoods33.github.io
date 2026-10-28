@@ -66,3 +66,15 @@ const wordCount = article.innerText.trim().split(/\s+/).filter(Boolean).length;
 const minutes = Math.max(1, Math.round(wordCount / 220));
 document.querySelector('.meta span:last-child').textContent = `${minutes}-minute read`;
 document.documentElement.dataset.wordCount = String(wordCount);
+
+// Field Notes enhancements: hero figure draw-in, scroll reveal, stat count-up
+document.body.classList.add("js");
+const prefersReduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.querySelectorAll(".hp-draw").forEach(p=>{try{const L=p.getTotalLength();p.style.setProperty("--len",L);if(prefersReduced){p.style.animation="none";p.style.strokeDasharray="none";p.style.strokeDashoffset="0"}}catch(e){}});
+if(prefersReduced){document.querySelectorAll(".hp-fade").forEach(el=>{el.style.animation="none";el.style.opacity="1"});document.querySelectorAll(".js .hero .issue,.hero .issue,.hero h1,.hero .deck,.hero .meta,.hero-art").forEach(el=>{el.style.animation="none";el.style.opacity="1"})}
+const revealTargets=document.querySelectorAll(".thesis,.section,.about-card,.stats,.notes-inner");
+revealTargets.forEach(el=>el.classList.add("reveal"));
+if("IntersectionObserver" in window&&!prefersReduced){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});revealTargets.forEach(el=>io.observe(el))}else{revealTargets.forEach(el=>el.classList.add("in"))}
+function countUp(el){const target=+el.dataset.target,t0=performance.now(),dur=1400;function f(t){const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=Math.round(target*e).toLocaleString("en-US");if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+const statVals=document.querySelectorAll(".stat-val");
+if(statVals.length){if("IntersectionObserver" in window&&!prefersReduced){statVals.forEach(el=>el.textContent="0");const so=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){so.unobserve(e.target);countUp(e.target)}})},{threshold:.4});statVals.forEach(el=>so.observe(el))}else{statVals.forEach(el=>el.textContent=(+el.dataset.target).toLocaleString("en-US"))}}
