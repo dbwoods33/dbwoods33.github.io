@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Before and after: a business proposal reformatted in Microsoft Word with a cover page, automatic table of contents, unified styles, captions and page numbering.">
+<title>Report Formatting Sample — Dave Lim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--surface:oklch(0.975 0.006 145);--surface-secondary:oklch(0.94 0.009 145);--text:oklch(0.22 0.015 155);--text-secondary:oklch(0.43 0.015 155);--accent:oklch(0.53 0.19 27);--rule:oklch(0.86 0.01 150)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--surface:oklch(0.185 0.012 155);--surface-secondary:oklch(0.235 0.014 155);--text:oklch(0.93 0.008 145);--text-secondary:oklch(0.70 0.013 155);--accent:oklch(0.68 0.17 30);--rule:oklch(0.36 0.012 155)}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--surface);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+header{padding:56px 0 32px;border-bottom:1px solid var(--rule)}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(30px,4.4vw,46px);line-height:1.12;letter-spacing:-.015em;margin:12px 0 14px;font-weight:600}
+.deck{max-width:760px;color:var(--text-secondary)}
+.note{margin-top:14px;font-size:14px;color:var(--text-secondary)}
+section{padding:40px 0;border-bottom:1px solid var(--rule)}
+h2{font-size:22px;font-weight:600;margin-bottom:6px}
+.sub{color:var(--text-secondary);font-size:15px;margin-bottom:22px}
+.pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.pages figure{background:#fff;border:1px solid var(--rule);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.pages img{display:block;width:100%;height:auto}
+.pages figcaption{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5b6570;background:var(--surface-secondary);padding:7px 10px;border-top:1px solid var(--rule)}
+ul.changes{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px 28px}
+ul.changes li{padding-left:18px;position:relative}
+ul.changes li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;background:var(--accent)}
+.dl{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.dl a{color:var(--text);text-decoration:none;border:1px solid var(--rule);padding:9px 14px;font-size:14px;font-weight:500}
+.dl a:hover{border-color:var(--accent);color:var(--accent)}
+footer{padding:32px 0 56px;font-size:14px;color:var(--text-secondary)}
+footer a{color:var(--text)}
+@media (max-width:600px){.wrap{padding:0 16px}.pages{grid-template-columns:1fr 1fr;gap:12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<p class="kicker">Work sample · Document formatting</p>
+<h1>Business proposal: before and after</h1>
+<p class="deck">A plain draft proposal rebuilt in Microsoft Word into an executive-ready document, using standard Word features only (no add-ins), so every element stays editable and updates automatically.</p>
+<p class="note">The company and figures are fictional, written for this sample.</p>
+</div></header>
+<main>
+<section><div class="wrap">
+<h2>What changed</h2>
+<p class="sub">Each item below uses built-in Word functionality, so the client can keep editing without breaking the layout.</p>
+<ul class="changes">
+<li>Branded cover page with no page number</li>
+<li>Table of contents generated from heading styles, updated in one click</li>
+<li>Unified Heading 1 / Heading 2 and body styles: one font, consistent spacing and margins</li>
+<li>Tables styled consistently, numbered captions, prices right-aligned</li>
+<li>Tables and their captions kept on one page, never split</li>
+<li>Chart centred, sized for print, with a numbered figure caption</li>
+<li>Automatic page numbering in the footer</li>
+<li>Stray blank page and empty spacer paragraphs removed</li>
+</ul>
+</div></section>
+<section><div class="wrap">
+<h2>Before</h2>
+<p class="sub">Mixed fonts and heading sizes, manual blank lines for spacing, unstyled tables, an uncaptioned chart and a trailing blank page.</p>
+<div class="pages">
+<figure><img src="before-1.jpg" alt="Before, page 1: unformatted title and body text with mixed heading fonts" loading="lazy"><figcaption>Page 1</figcaption></figure>
+<figure><img src="before-2.jpg" alt="Before, page 2: plain tables without borders and an uncaptioned chart" loading="lazy"><figcaption>Page 2</figcaption></figure>
+<figure><img src="before-3.jpg" alt="Before, page 3: stray blank page" loading="lazy"><figcaption>Page 3 (blank)</figcaption></figure>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>After</h2>
+<p class="sub">Cover page, automatic contents, consistent styles, captioned tables and figure, and page numbers.</p>
+<div class="pages">
+<figure><img src="after-1.jpg" alt="After, page 1: branded cover page" loading="lazy"><figcaption>Cover</figcaption></figure>
+<figure><img src="after-2.jpg" alt="After, page 2: automatic table of contents" loading="lazy"><figcaption>Contents</figcaption></figure>
+<figure><img src="after-3.jpg" alt="After, page 3: styled headings and captioned timeline table" loading="lazy"><figcaption>Page 3</figcaption></figure>
+<figure><img src="after-4.jpg" alt="After, page 4: pricing table, captioned chart and next steps" loading="lazy"><figcaption>Page 4</figcaption></figure>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>Files</h2>
+<p class="sub">Open the Word files to check the styles, contents field and captions yourself.</p>
+<div class="dl">
+<a href="sample-proposal-formatted.docx" download>Formatted .docx</a>
+<a href="after.pdf">Formatted PDF</a>
+<a href="sample-proposal-raw.docx" download>Original draft .docx</a>
+<a href="before.pdf">Original draft PDF</a>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">Dave Lim · <a href="/">dbwoods33.github.io</a></div></footer>
+</body>
+</html>
