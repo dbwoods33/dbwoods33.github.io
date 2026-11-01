@@ -118,7 +118,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .ahero{padding-top:28px;padding-bottom:28px}.crumbs{margin-bottom:20px}h1{font-size:clamp(36px,10.4vw,52px)}.deck{font-size:19px;margin-top:16px}.meta{margin-top:20px}
 .prose{font-size:18.5px;line-height:1.66}.prose h2{font-size:28px}.formula{font-size:13px;padding:12px 14px}
 .takeaways{padding:18px 18px 20px;font-size:15.5px}
-.tbl table{font-size:13.5px}.tbl th,.tbl td{padding:8px 10px}
+.tbl table{font-size:13.5px}.tbl.wide table{min-width:560px}.tbl.wide{background:linear-gradient(to right,var(--card) 30%,transparent),linear-gradient(to left,var(--card) 30%,transparent) 100% 0,radial-gradient(farthest-side at 100% 50%,var(--shadow),transparent) 100% 0;background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%;background-attachment:local,local,scroll;background-color:var(--card)}.tbl th,.tbl td{padding:8px 10px}
 .cta-body{padding:20px 18px 22px}.cta-btns .btn{flex:1 1 100%}.endcta .btn{flex:1 1 100%}
 .faq summary{font-size:18px}.faq details p{padding-right:0}
 .related{padding-bottom:56px}.related ul{grid-template-columns:1fr}
