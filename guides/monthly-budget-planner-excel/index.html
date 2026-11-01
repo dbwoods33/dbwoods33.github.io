@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Make a Monthly Budget in Excel (Step by Step + Free Method) — Field Notes</title>
+<meta name="description" content="Build a working monthly budget in Excel or Google Sheets from scratch: categories, a transaction log, SUMIFS formulas, budget vs actual and a 50/30/20 check. Free method with formulas.">
+<link rel="canonical" href="https://dbwoods33.github.io/guides/monthly-budget-planner-excel/">
+<meta name="theme-color" content="#f4f5f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#181c1a" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article"><meta property="og:url" content="https://dbwoods33.github.io/guides/monthly-budget-planner-excel/"><meta property="og:site_name" content="Field Notes">
+<meta property="og:title" content="How to Make a Monthly Budget in Excel (Step by Step + Free Method)"><meta property="og:description" content="Build a working monthly budget in Excel or Google Sheets from scratch: categories, a transaction log, SUMIFS formulas, budget vs actual and a 50/30/20 check. Free method with formulas.">
+<meta property="og:image" content="https://dbwoods33.github.io/guides/img/monthly-budget-planner-excel-hero.jpg"><meta property="og:image:width" content="1400"><meta property="og:image:height" content="1120"><meta property="og:image:alt" content="Monthly Budget Planner spreadsheet template for Excel and Google Sheets">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Make a Monthly Budget in Excel (Step by Step + Free Method)"><meta name="twitter:description" content="Build a working monthly budget in Excel or Google Sheets from scratch: categories, a transaction log, SUMIFS formulas, budget vs actual and a 50/30/20 check. Free method with formulas."><meta name="twitter:image" content="https://dbwoods33.github.io/guides/img/monthly-budget-planner-excel-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232926'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%23f4f5f1'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/guides/guides.css">
+<script>try{const t=localStorage.getItem('fn-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t)}catch(e){}</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "How to make a monthly budget in Excel, step by step", "description": "Build a working monthly budget in Excel or Google Sheets from scratch: categories, a transaction log, SUMIFS formulas, budget vs actual and a 50/30/20 check. Free method with formulas.", "image": ["https://dbwoods33.github.io/guides/img/monthly-budget-planner-excel-hero.jpg"], "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "author": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "publisher": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dbwoods33.github.io/guides/monthly-budget-planner-excel/"}, "wordCount": 1569}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Excel have a free budget template?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Excel and Google Sheets both include basic budget templates under File → New. They are fine for a simple plan, but most don’t track actual transactions by month, which is the part that keeps you accountable. The two-tab method in this guide is also free and does."}}, {"@type": "Question", "name": "Should I use Excel or Google Sheets for a budget?", "acceptedAnswer": {"@type": "Answer", "text": "Either works with the formulas above. Google Sheets is free, runs in a browser and syncs to your phone, which makes logging on the go easier. Excel is faster with large files and works offline. Pick the one you will actually open every week."}}, {"@type": "Question", "name": "What is the best budgeting method for beginners?", "acceptedAnswer": {"@type": "Answer", "text": "Zero-based budgeting is the most effective for most beginners because it forces a decision about every dollar. Use 50/30/20 as a quick check on whether your overall split is reasonable."}}, {"@type": "Question", "name": "How many budget categories should I have?", "acceptedAnswer": {"@type": "Answer", "text": "Between 12 and 20 works for most households. Fewer than that and you can’t see where money leaks. More than that and logging takes too long, so you stop."}}, {"@type": "Question", "name": "How do I handle income that changes every month?", "acceptedAnswer": {"@type": "Answer", "text": "Budget from your lowest typical month. When you earn more, send the extra to savings or a buffer category first, then use it to smooth out the leaner months."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dbwoods33.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://dbwoods33.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "Monthly budget in Excel", "item": "https://dbwoods33.github.io/guides/monthly-budget-planner-excel/"}]}]</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="head"><div class="head-in"><a class="brand" href="/"><span class="mark">F</span><span>Field Notes</span></a><nav class="nav" aria-label="Site"><a class="essays" href="/">Essays</a><a href="/templates/">Templates</a><a href="/guides/" aria-current="page">Guides</a><button type="button" id="themeToggle">Dark</button></nav></div></header>
+<main id="main">
+<article>
+<header class="wrap ahero">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span>Monthly budget in Excel</span></nav>
+<p class="kicker">Budgeting</p>
+<h1>How to make a monthly budget in Excel, step by step</h1>
+<p class="deck">A free, formula-by-formula method that takes about an hour to set up and fifteen minutes a week to run, plus the mistakes that make most spreadsheet budgets quietly stop working.</p>
+<p class="meta"><span>By Dave Lim</span><span>Updated <time datetime="2026-11-01">November 2026</time></span><span>7-minute read</span></p>
+</header>
+<div class="wrap agrid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary><ol><li><a href="#what-a-monthly-budget-needs">What a monthly budget needs</a></li><li><a href="#step-1-set-up-two-tabs">Step 1: Set up two tabs</a></li><li><a href="#step-2-plan-your-categories">Step 2: Plan your categories</a></li><li><a href="#step-3-log-transactions-with-drop-downs">Step 3: Log transactions with drop-downs</a></li><li><a href="#step-4-calculate-actual-spending-with-sumifs">Step 4: Calculate actual spending with SUMIFS</a></li><li><a href="#step-5-show-what-s-left-and-flag-overspending">Step 5: Show what’s left and flag overspending</a></li><li><a href="#step-6-a-15-minute-weekly-routine">Step 6: A 15-minute weekly routine</a></li><li><a href="#common-mistakes-that-break-spreadsheet-budgets">Common mistakes that break spreadsheet budgets</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></nav>
+<div class="prose">
+<section class="takeaways" aria-label="Key takeaways"><p class="tk-h">The short version</p><ul><li>A working budget needs only two tabs: a <strong>Budget</strong> tab with planned amounts and a <strong>Transactions</strong> tab where you log what you spend.</li><li>One formula does the heavy lifting: <code>SUMIFS</code> adds up each category’s spending for the month you pick.</li><li>Give every dollar of take-home pay a job (zero-based), then sanity-check the split against 50/30/20.</li><li>The budget only works if you log spending at least weekly. Make that as easy as possible with drop-downs.</li></ul></section>
+
+<p>Most people who try to budget in Excel start with a blank grid, type a list of bills, and give up by the second month. The problem is rarely the maths. It is that the spreadsheet only records a <em>plan</em>, so it can never tell you whether you stuck to it.</p>
+<p>A budget that works has two halves: what you <strong>planned</strong> to spend in each category, and what you <strong>actually</strong> spent. This guide builds both in plain Excel (or Google Sheets), with formulas you can copy. No macros, no add-ins and no paid software.</p>
+
+<h2 id="what-a-monthly-budget-needs">What a monthly budget needs</h2>
+<p>Strip away the colours and charts and every budget spreadsheet is answering four questions:</p>
+<ol>
+<li><strong>How much came in?</strong> Your take-home pay, after tax and deductions, plus any side income.</li>
+<li><strong>Where should it go?</strong> A planned amount for each category.</li>
+<li><strong>Where did it actually go?</strong> Real transactions, each tagged with a category.</li>
+<li><strong>What’s the gap?</strong> Planned minus actual, by category and in total.</li>
+</ol>
+<p>Budget from take-home pay, not salary. If your paycheck lands as $4,200 a month after tax, that is the number you have to spend, whatever your offer letter says.</p>
+
+<h2 id="step-1-set-up-two-tabs">Step 1: Set up two tabs</h2>
+<p>Create a new workbook with two sheets named <strong>Budget</strong> and <strong>Transactions</strong>. Keeping the plan and the log separate is what makes the whole thing maintainable: you never edit formulas when you add spending, you just add rows.</p>
+<p>On <strong>Transactions</strong>, type four headers in row 1: <code>Date</code>, <code>Description</code>, <code>Category</code>, <code>Amount</code>. Click any header and press <code>Ctrl+T</code> (<code>⌘+T</code> on a Mac) to turn the range into an Excel Table and name it <code>Transactions</code> under Table Design. Tables grow automatically, so formulas pointing at them never need updating.</p>
+<p>On <strong>Budget</strong>, put the month you are tracking in cell <code>B1</code> as a date on the first of the month (for example <code>1/11/2026</code> or <code>11/1/2026</code>, depending on your regional date format). Then add headers in row 4: <code>Category</code>, <code>Planned</code>, <code>Actual</code>, <code>Left</code>.</p>
+
+<h2 id="step-2-plan-your-categories">Step 2: Plan your categories</h2>
+<p>List your categories in column A from row 5 down. Fifteen to twenty is plenty; more than that and logging becomes a chore. Then fill in <code>Planned</code> using one of two approaches.</p>
+<h3>Zero-based budgeting</h3>
+<p>Assign every dollar of income to a category, including savings and debt, until income minus the plan equals zero. Money doesn’t disappear into “whatever’s left”, because nothing is left unassigned.</p>
+<div class="tbl"><table><caption>Example zero-based budget on $4,200 take-home pay</caption><thead><tr><th>Category</th><th>Group</th><th class="n">Planned</th></tr></thead><tbody><tr><th scope="row">Rent</th><td>Needs</td><td class="n">$1,350</td></tr><tr><th scope="row">Utilities</th><td>Needs</td><td class="n">$160</td></tr><tr><th scope="row">Groceries</th><td>Needs</td><td class="n">$520</td></tr><tr><th scope="row">Transport</th><td>Needs</td><td class="n">$220</td></tr><tr><th scope="row">Insurance</th><td>Needs</td><td class="n">$140</td></tr><tr><th scope="row">Phone &amp; internet</th><td>Needs</td><td class="n">$95</td></tr><tr><th scope="row">Dining out</th><td>Wants</td><td class="n">$180</td></tr><tr><th scope="row">Subscriptions</th><td>Wants</td><td class="n">$45</td></tr><tr><th scope="row">Shopping</th><td>Wants</td><td class="n">$150</td></tr><tr><th scope="row">Entertainment</th><td>Wants</td><td class="n">$100</td></tr><tr><th scope="row">Personal care</th><td>Wants</td><td class="n">$60</td></tr><tr><th scope="row">Debt payments</th><td>Savings &amp; debt</td><td class="n">$300</td></tr><tr><th scope="row">Emergency fund</th><td>Savings &amp; debt</td><td class="n">$500</td></tr><tr><th scope="row">Sinking funds</th><td>Savings &amp; debt</td><td class="n">$380</td></tr></tbody><tfoot><tr><th scope="row">Total assigned</th><td></td><td class="n">$4,200</td></tr></tfoot></table></div><p class="tbl-note">Every dollar of income has a job, so income minus planned spending is exactly $0.</p>
+<h3>The 50/30/20 check</h3>
+<p>The 50/30/20 rule suggests roughly 50% of take-home pay on needs, 30% on wants and 20% on savings and extra debt payments. It is a useful smell test rather than a law. Group your categories and see how far off you are:</p>
+<div class="tbl"><table><caption>Checking the same budget against 50/30/20</caption><thead><tr><th>Group</th><th class="n">Planned</th><th class="n">Share of income</th><th class="n">50/30/20 target</th><th class="n">Target amount</th></tr></thead><tbody><tr><th scope="row">Needs</th><td class="n">$2,485</td><td class="n">59.2%</td><td class="n">50%</td><td class="n">$2,100</td></tr><tr><th scope="row">Wants</th><td class="n">$535</td><td class="n">12.7%</td><td class="n">30%</td><td class="n">$1,260</td></tr><tr><th scope="row">Savings &amp; debt</th><td class="n">$1,180</td><td class="n">28.1%</td><td class="n">20%</td><td class="n">$840</td></tr></tbody><tfoot><tr><th scope="row">Total</th><td class="n">$4,200</td><td class="n">100.0%</td><td class="n">100%</td><td class="n">$4,200</td></tr></tfoot></table></div><p class="tbl-note">Needs come in at 59.2%, above the 50% guide. That is common in high-rent areas; the budget compensates by keeping wants low.</p>
+<p>To calculate a group total, add a <code>Group</code> column next to your categories and use <code>=SUMIFS(B:B, E:E, "Needs")</code>, adjusting column letters to match your sheet. Divide by income for the percentage.</p>
+
+<h2 id="step-3-log-transactions-with-drop-downs">Step 3: Log transactions with drop-downs</h2>
+<p>Typos break budgets: “Groceries” and “Grocery” are two different categories to a formula. Stop them with a drop-down list.</p>
+<ol class="steps">
+<li>Select the Category column of your Transactions table.</li>
+<li>Go to <strong>Data → Data Validation</strong> (in Google Sheets: <strong>Data → Data validation → Dropdown (from a range)</strong>).</li>
+<li>Choose <strong>List</strong> and set the source to your category list, for example <code>=Budget!$A$5:$A$24</code>.</li>
+</ol>
+<p>Now each new row offers your exact category names. Enter spending as positive numbers. If you also want to track income here, add income categories such as “Salary” to the same list.</p>
+<p>Log in whichever way you’ll keep doing: daily from receipts, or weekly from your banking app. Most banks also let you export a CSV you can paste in and categorise.</p>
+
+<h2 id="step-4-calculate-actual-spending-with-sumifs">Step 4: Calculate actual spending with SUMIFS</h2>
+<p>This is the formula that turns a list of transactions into a budget report. In <code>C5</code> on the Budget tab, enter:</p>
+<pre class="formula">=SUMIFS(Transactions[Amount], Transactions[Category], A5,
+        Transactions[Date], "&gt;="&amp;$B$1,
+        Transactions[Date], "&lt;"&amp;EDATE($B$1,1))</pre>
+<p>In plain English: add up every amount whose category matches A5 and whose date falls on or after the first of the selected month but before the first of the next month. <code>EDATE($B$1,1)</code> moves the date forward exactly one month, so it handles 28-, 30- and 31-day months without any special cases. Copy the formula down for every category.</p>
+<p>Google Sheets understands the same function, but if your sheet doesn’t use Table references, point at plain columns instead:</p>
+<pre class="formula">=SUMIFS(Transactions!$D:$D, Transactions!$C:$C, A5,
+        Transactions!$A:$A, "&gt;="&amp;$B$1,
+        Transactions!$A:$A, "&lt;"&amp;EDATE($B$1,1))</pre>
+<p>Change <code>B1</code> to a different month and every Actual figure recalculates. That single cell is your month selector.</p>
+
+<h2 id="step-5-show-what-s-left-and-flag-overspending">Step 5: Show what’s left and flag overspending</h2>
+<p>In <code>D5</code>, subtract actual from planned and copy down:</p>
+<pre class="formula">=B5-C5</pre>
+<p>Add a status column if you want a quick read:</p>
+<pre class="formula">=IF(C5&gt;B5,"Over",IF(C5&gt;=0.9*B5,"Close","OK"))</pre>
+<p>Then use <strong>Home → Conditional Formatting → Highlight Cells Rules → Less Than 0</strong> on the Left column to turn overspending red. At the bottom, total each column with <code>SUM</code> and add two numbers worth watching every month:</p>
+<ul>
+<li><strong>Money left this month:</strong> total income minus total actual spending.</li>
+<li><strong>Savings rate:</strong> money left (plus anything you moved to savings categories) divided by income. Even 10% is a solid start.</li>
+</ul>
+<figure class="shot"><img src="/guides/img/monthly-budget-planner-excel-f2.webp" alt="Budget vs actual table listing each category with budget, spent, left, a used bar and an On track, Close or Over status" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>Budget vs actual in the Monthly Budget Planner: the same planned-minus-actual logic as Steps 4 and 5, with status flags and used bars.</figcaption></figure>
+
+<h2 id="step-6-a-15-minute-weekly-routine">Step 6: A 15-minute weekly routine</h2>
+<p>The spreadsheet is the easy part. The habit is what makes it work. Once a week:</p>
+<ol>
+<li>Log or paste in the week’s transactions and pick categories.</li>
+<li>Scan the Left column. Anything red or close to zero?</li>
+<li>Decide, don’t just observe: move money from a category with slack, or slow down spending in the one that’s running hot.</li>
+</ol>
+<p>At the end of the month, copy the Planned column into next month (or keep one Budget tab and change <code>B1</code>), adjust for anything you learned, and start again. Expect the first two or three months to be rough. Your plan gets more accurate every month because it is built on what you actually spend.</p>
+
+<h2 id="common-mistakes-that-break-spreadsheet-budgets">Common mistakes that break spreadsheet budgets</h2>
+<ul>
+<li><strong>Budgeting from gross salary.</strong> Tax and deductions vanish before you see the money. Always plan from take-home pay.</li>
+<li><strong>Forgetting irregular expenses.</strong> Car registration, annual subscriptions and gifts don’t arrive monthly, but they still need money each month. Add a sinking-funds line and set aside 1/12 of the yearly cost.</li>
+<li><strong>Too many categories.</strong> If you can’t decide between two categories while logging, merge them.</li>
+<li><strong>Hard-coding numbers into formulas.</strong> Keep inputs (planned amounts, the month) in cells and point formulas at them.</li>
+<li><strong>Treating overspending as failure.</strong> A red cell is information. Adjust the plan or the behaviour and keep going.</li>
+</ul>
+<figure class="shot"><img src="/guides/img/monthly-budget-planner-excel-f1.webp" alt="Monthly Budget Planner dashboard in Excel showing savings rate, budget left and saved this year cards for the selected month" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The template’s Dashboard: pick a month and year and the savings rate, budget left and year-to-date savings update.</figcaption></figure>
+<aside class="cta" aria-labelledby="cta-monthly-budget-planner-excel">
+<a class="cta-img" href="https://dbwoods.gumroad.com/l/kbvfu" rel="noopener" tabindex="-1" aria-hidden="true"><picture><source srcset="/guides/img/monthly-budget-planner-excel-hero.webp" type="image/webp"><img src="/guides/img/monthly-budget-planner-excel-hero.jpg" alt="" width="1400" height="1120" loading="lazy" decoding="async"></picture></a>
+<div class="cta-body"><p class="cta-kicker">Skip the setup</p>
+<h2 class="cta-title" id="cta-monthly-budget-planner-excel">Monthly Budget Planner</h2>
+<p class="cta-lede">Everything in this guide, already built and formatted: a transaction log with drop-downs, budget vs actual, and a dashboard with a month and year selector.</p>
+<ul class="ticks"><li>Month &amp; year selector dashboard with charts</li><li>Budget vs actual by category with variance and status</li><li>50/30/20 rule check</li><li>Year-view heatmap of spending by category</li><li>Income vs expense detected automatically from the category</li></ul>
+<p class="cta-compat">Excel 2016+ and Google Sheets · no macros · sample data included · one-time $7</p>
+<div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/kbvfu" rel="noopener">Get the budget planner — $7</a><a class="btn ghost" href="/templates/">Browse all templates</a></div>
+</div></aside>
+
+<div class="endcta"><p><strong>Want this done for you?</strong> The Monthly Budget Planner has the transaction log, SUMIFS logic, 50/30/20 check and month selector set up, with sample data so you can see it working first.</p><div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/kbvfu" rel="noopener">See the budget planner on Gumroad</a><a class="btn ghost" href="/templates/">All templates</a></div></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><details><summary>Does Excel have a free budget template?</summary><p>Yes. Excel and Google Sheets both include basic budget templates under File → New. They are fine for a simple plan, but most don’t track actual transactions by month, which is the part that keeps you accountable. The two-tab method in this guide is also free and does.</p></details><details><summary>Should I use Excel or Google Sheets for a budget?</summary><p>Either works with the formulas above. Google Sheets is free, runs in a browser and syncs to your phone, which makes logging on the go easier. Excel is faster with large files and works offline. Pick the one you will actually open every week.</p></details><details><summary>What is the best budgeting method for beginners?</summary><p>Zero-based budgeting is the most effective for most beginners because it forces a decision about every dollar. Use 50/30/20 as a quick check on whether your overall split is reasonable.</p></details><details><summary>How many budget categories should I have?</summary><p>Between 12 and 20 works for most households. Fewer than that and you can’t see where money leaks. More than that and logging takes too long, so you stop.</p></details><details><summary>How do I handle income that changes every month?</summary><p>Budget from your lowest typical month. When you earn more, send the extra to savings or a buffer category first, then use it to smooth out the leaner months.</p></details></section>
+</div>
+</div>
+</article>
+<section class="wrap related" aria-labelledby="rel-h"><h2 id="rel-h">More guides</h2><ul><li><a href="/guides/annual-budget-plan-vs-actual-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">Plan vs actual: how to track a yearly budget</span><span class="rel-m">6-minute read</span></a></li><li><a href="/guides/paycheck-to-paycheck-budget-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to budget by paycheck, including biweekly pay</span><span class="rel-m">6-minute read</span></a></li><li><a href="/guides/savings-goal-tracker-excel/"><span class="rel-k">Saving</span><span class="rel-t">How to track multiple savings goals and sinking funds</span><span class="rel-m">5-minute read</span></a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 Dave Lim · Guides are general information, not financial, tax or investment advice.</span><span class="foot-links"><a href="/guides/">All guides</a><a href="/templates/">Templates</a></span></div></footer>
+<script src="/guides/guides.js" defer></script>
+</body>
+</html>

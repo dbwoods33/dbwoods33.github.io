@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Track Multiple Savings Goals &amp; Sinking Funds (With Formulas) — Field Notes</title>
+<meta name="description" content="Set up sinking funds for irregular expenses, work out how much to save per goal each month, track several goals in one account and see who’s on track. Worked example and spreadsheet formulas.">
+<link rel="canonical" href="https://dbwoods33.github.io/guides/savings-goal-tracker-excel/">
+<meta name="theme-color" content="#f4f5f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#181c1a" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article"><meta property="og:url" content="https://dbwoods33.github.io/guides/savings-goal-tracker-excel/"><meta property="og:site_name" content="Field Notes">
+<meta property="og:title" content="How to Track Multiple Savings Goals &amp; Sinking Funds (With Formulas)"><meta property="og:description" content="Set up sinking funds for irregular expenses, work out how much to save per goal each month, track several goals in one account and see who’s on track. Worked example and spreadsheet formulas.">
+<meta property="og:image" content="https://dbwoods33.github.io/guides/img/savings-goal-tracker-excel-hero.jpg"><meta property="og:image:width" content="1400"><meta property="og:image:height" content="1120"><meta property="og:image:alt" content="Savings Goal Tracker spreadsheet template for Excel and Google Sheets">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Track Multiple Savings Goals &amp; Sinking Funds (With Formulas)"><meta name="twitter:description" content="Set up sinking funds for irregular expenses, work out how much to save per goal each month, track several goals in one account and see who’s on track. Worked example and spreadsheet formulas."><meta name="twitter:image" content="https://dbwoods33.github.io/guides/img/savings-goal-tracker-excel-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232926'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%23f4f5f1'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/guides/guides.css">
+<script>try{const t=localStorage.getItem('fn-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t)}catch(e){}</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "How to track multiple savings goals and sinking funds", "description": "Set up sinking funds for irregular expenses, work out how much to save per goal each month, track several goals in one account and see who’s on track. Worked example and spreadsheet formulas.", "image": ["https://dbwoods33.github.io/guides/img/savings-goal-tracker-excel-hero.jpg"], "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "author": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "publisher": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dbwoods33.github.io/guides/savings-goal-tracker-excel/"}, "wordCount": 1136}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a sinking fund?", "acceptedAnswer": {"@type": "Answer", "text": "A sinking fund is money you set aside each month for a specific expense you know is coming, such as an annual insurance premium or holiday gifts, so you can pay it in full when it arrives."}}, {"@type": "Question", "name": "How many sinking funds should I have?", "acceptedAnswer": {"@type": "Answer", "text": "Start with three to five covering your biggest irregular costs. You can add more once the habit sticks. Too many small funds make tracking tedious."}}, {"@type": "Question", "name": "Should sinking funds be in separate bank accounts?", "acceptedAnswer": {"@type": "Answer", "text": "They don’t need to be. One savings account plus a ledger that tags each deposit to a goal works well, as long as the total of your goals matches the account balance."}}, {"@type": "Question", "name": "Is a sinking fund the same as an emergency fund?", "acceptedAnswer": {"@type": "Answer", "text": "No. An emergency fund covers unpredictable events and ideally stays untouched. Sinking funds cover predictable expenses and are meant to be spent."}}, {"@type": "Question", "name": "How do I calculate how much to save each month?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract what you’ve already saved from the target, then divide by the number of months until you need the money. Recalculate whenever the target, date or balance changes."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dbwoods33.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://dbwoods33.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "Sinking funds", "item": "https://dbwoods33.github.io/guides/savings-goal-tracker-excel/"}]}]</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="head"><div class="head-in"><a class="brand" href="/"><span class="mark">F</span><span>Field Notes</span></a><nav class="nav" aria-label="Site"><a class="essays" href="/">Essays</a><a href="/templates/">Templates</a><a href="/guides/" aria-current="page">Guides</a><button type="button" id="themeToggle">Dark</button></nav></div></header>
+<main id="main">
+<article>
+<header class="wrap ahero">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span>Sinking funds</span></nav>
+<p class="kicker">Saving</p>
+<h1>How to track multiple savings goals and sinking funds</h1>
+<p class="deck">Most budget-busting expenses aren’t emergencies. They’re bills we knew were coming and didn’t save for. Sinking funds turn them into small monthly amounts, and a simple tracker keeps them all straight.</p>
+<p class="meta"><span>By Dave Lim</span><span>Updated <time datetime="2026-11-01">November 2026</time></span><span>5-minute read</span></p>
+</header>
+<div class="wrap agrid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary><ol><li><a href="#sinking-funds-vs-an-emergency-fund-vs-savings-go">Sinking funds vs an emergency fund vs savings goals</a></li><li><a href="#step-1-list-what-s-coming">Step 1: List what’s coming</a></li><li><a href="#step-2-work-out-the-monthly-amount-for-each-goal">Step 2: Work out the monthly amount for each goal</a></li><li><a href="#step-3-one-account-many-goals">Step 3: One account, many goals</a></li><li><a href="#step-4-check-whether-each-goal-is-on-track">Step 4: Check whether each goal is on track</a></li><li><a href="#step-5-spend-from-the-fund-without-guilt">Step 5: Spend from the fund without guilt</a></li><li><a href="#which-goals-to-fund-first">Which goals to fund first</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></nav>
+<div class="prose">
+<section class="takeaways" aria-label="Key takeaways"><p class="tk-h">The short version</p><ul><li>A <strong>sinking fund</strong> is money set aside monthly for a known future cost: insurance, gifts, car repairs, a trip.</li><li>For each goal: <strong>needed per month = (target − saved) ÷ months left</strong>. Recalculate whenever something changes.</li><li>You don’t need a separate bank account per goal. One savings account plus a ledger that tags each deposit to a goal works well.</li><li>Check “on track” by comparing what you’ve saved with what you <em>should</em> have saved by now.</li></ul></section>
+
+<p>An annual car insurance premium, a holiday season, a set of tyres, a friend’s wedding. None of these are surprises, yet they wreck budgets every year because they arrive as one large bill instead of twelve small ones.</p>
+<p>Sinking funds fix that. You decide what’s coming, divide it by the months you have, and set that amount aside every month. When the bill arrives, the money is already there. This guide shows how to plan them, how to run several at once without a dozen bank accounts, and how to tell at a glance which goals are falling behind.</p>
+
+<h2 id="sinking-funds-vs-an-emergency-fund-vs-savings-go">Sinking funds vs an emergency fund vs savings goals</h2>
+<ul>
+<li><strong>Emergency fund:</strong> money for things you <em>can’t</em> predict, such as job loss or a medical bill. It has no due date and you hope never to use it.</li>
+<li><strong>Sinking funds:</strong> money for things you <em>can</em> predict but that don’t happen monthly. You fully expect to spend them.</li>
+<li><strong>Savings goals:</strong> bigger targets with a chosen date, like a house deposit or a new car. They work exactly like sinking funds, only larger.</li>
+</ul>
+<p>Keeping them separate matters. If your emergency fund also pays for Christmas, you’ll find it half empty when a real emergency arrives.</p>
+
+<h2 id="step-1-list-what-s-coming">Step 1: List what’s coming</h2>
+<p>Go through the last twelve months of bank and card statements and note every expense that wasn’t monthly. Common sinking funds include:</p>
+<ul>
+<li>Insurance premiums paid annually or every six months</li>
+<li>Car repairs, servicing, tyres and registration</li>
+<li>Holidays, birthdays and gifts</li>
+<li>Travel and vacations</li>
+<li>Annual subscriptions and memberships</li>
+<li>Medical and dental costs not covered by insurance</li>
+<li>Home maintenance and replacing appliances</li>
+<li>School fees, uniforms and activities</li>
+</ul>
+<p>For each one, write down a target amount, the date you need it, and anything you’ve already saved toward it.</p>
+
+<h2 id="step-2-work-out-the-monthly-amount-for-each-goal">Step 2: Work out the monthly amount for each goal</h2>
+<p>The formula is the same for every goal:</p>
+<pre class="formula">Needed per month = (Target − Saved so far) ÷ Months left</pre>
+<div class="tbl"><table><caption>Example sinking funds</caption><thead><tr><th>Goal</th><th class="n">Target</th><th class="n">Saved so far</th><th class="n">Months left</th><th class="n">Needed per month</th></tr></thead><tbody><tr><th scope="row">Car insurance (6-month premium)</th><td class="n">$900</td><td class="n">$0</td><td class="n">6</td><td class="n">$150.00</td></tr><tr><th scope="row">Holiday gifts</th><td class="n">$1,000</td><td class="n">$200</td><td class="n">10</td><td class="n">$80.00</td></tr><tr><th scope="row">Car repairs &amp; maintenance</th><td class="n">$1,200</td><td class="n">$0</td><td class="n">12</td><td class="n">$100.00</td></tr><tr><th scope="row">Summer vacation</th><td class="n">$2,400</td><td class="n">$600</td><td class="n">12</td><td class="n">$150.00</td></tr><tr><th scope="row">Annual memberships</th><td class="n">$180</td><td class="n">$0</td><td class="n">9</td><td class="n">$20.00</td></tr></tbody><tfoot><tr><th scope="row">Total</th><td class="n">$5,680</td><td class="n">$800</td><td class="n"></td><td class="n">$500.00</td></tr></tfoot></table></div><p class="tbl-note">Needed per month = (target − saved so far) ÷ months left.</p>
+<p>Five goals that would have been $5,680 of “unexpected” bills become a single $500 monthly transfer. That is the whole idea.</p>
+<p>In a spreadsheet with the target in <code>B2</code>, saved in <code>C2</code> and due date in <code>D2</code>, calculate months left and the monthly amount like this:</p>
+<pre class="formula">Months left:  =MAX(1,(YEAR(D2)-YEAR(TODAY()))*12+MONTH(D2)-MONTH(TODAY()))
+Per month:    =MAX(0,(B2-C2)/E2)</pre>
+<p>The <code>MAX(1, …)</code> stops a divide-by-zero in the month a goal is due, and <code>MAX(0, …)</code> shows zero once a goal is fully funded.</p>
+<h3>If the total is more than you can afford</h3>
+<p>Adjust in this order: push back dates on flexible goals (vacation), lower targets on optional ones, and only then trim the essentials. Never just skip a month without recalculating; the shortfall has to be made up somewhere.</p>
+
+<h2 id="step-3-one-account-many-goals">Step 3: One account, many goals</h2>
+<p>You have two good options:</p>
+<ul>
+<li><strong>Separate accounts or “buckets.”</strong> Many banks let you split one savings account into named pots. It’s visual and hard to raid by accident, but awkward if your bank doesn’t offer it.</li>
+<li><strong>One account plus a ledger.</strong> Keep all sinking fund money in one high-interest savings account, and record every deposit and withdrawal in a spreadsheet with a <code>Goal</code> column. Each goal’s balance is <code>=SUMIFS(Amount, Goal, "Holiday gifts")</code>, with withdrawals entered as negative amounts.</li>
+</ul>
+<p>The ledger approach scales to any number of goals, and the total of all goal balances should always equal your account balance. If it doesn’t, something wasn’t logged.</p>
+<figure class="shot"><img src="/guides/img/savings-goal-tracker-excel-f1.webp" alt="Goals table in the Savings Goal Tracker listing each goal with target, dates, saved, left to save, progress bar, need per month, projected finish and status" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>Goals in the Savings Goal Tracker: progress bars, the amount needed per month, a projected finish and an On track, Behind or Reached status.</figcaption></figure>
+
+<h2 id="step-4-check-whether-each-goal-is-on-track">Step 4: Check whether each goal is on track</h2>
+<p>A progress bar tells you how far you’ve come. It doesn’t tell you whether you’re keeping pace. For that, compare what you’ve saved with what you should have saved by now if you’d saved evenly:</p>
+<pre class="formula">Expected by now = Target × (Months elapsed ÷ Total months)</pre>
+<p>Example: a $2,400 vacation fund started on 1 January, due at the end of December. After five months you should have $2,400 × 5 ÷ 12 = <strong>$1,000</strong>. If you have $850, you’re $150 behind. Spreading that shortfall over the remaining seven months raises the monthly amount from $200 to <strong>$221.43</strong>.</p>
+<p>A simple status rule works well: <em>Reached</em> if saved ≥ target, <em>On track</em> if saved ≥ expected, otherwise <em>Behind</em>.</p>
+
+<h2 id="step-5-spend-from-the-fund-without-guilt">Step 5: Spend from the fund without guilt</h2>
+<p>Sinking funds are meant to be spent. When the insurance bill arrives, pay it from the fund, log the withdrawal, and start again for the next one. If the bill comes in higher than expected, cover the gap from flexible goals rather than from your emergency fund, then raise next year’s target.</p>
+<p>Withdrawals are also when trackers usually break: a goal reaches 100%, money comes out, and the progress bar never moves again. Make sure your tracker counts withdrawals so balances stay honest.</p>
+
+<h2 id="which-goals-to-fund-first">Which goals to fund first</h2>
+<ol>
+<li><strong>A starter emergency fund</strong>, even one month of essentials.</li>
+<li><strong>Near-term, non-negotiable bills:</strong> insurance, registration, tax.</li>
+<li><strong>Predictable but flexible costs:</strong> gifts, car maintenance.</li>
+<li><strong>Wants with flexible dates:</strong> travel, upgrades.</li>
+</ol>
+<figure class="shot"><img src="/guides/img/savings-goal-tracker-excel-f2.webp" alt="Savings Goal Tracker dashboard with saved this month, saved this year and number of goals on track" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The Dashboard: pick a month to see what you saved that month and year-to-date, and how many goals are on track.</figcaption></figure>
+<aside class="cta" aria-labelledby="cta-savings-goal-tracker-excel">
+<a class="cta-img" href="https://dbwoods.gumroad.com/l/wrechx" rel="noopener" tabindex="-1" aria-hidden="true"><picture><source srcset="/guides/img/savings-goal-tracker-excel-hero.webp" type="image/webp"><img src="/guides/img/savings-goal-tracker-excel-hero.jpg" alt="" width="1400" height="1120" loading="lazy" decoding="async"></picture></a>
+<div class="cta-body"><p class="cta-kicker">Skip the setup</p>
+<h2 class="cta-title" id="cta-savings-goal-tracker-excel">Savings Goal Tracker</h2>
+<p class="cta-lede">Up to 10 goals side by side, each with a target date, progress bar, monthly amount needed and on-track status, fed by a single deposit log.</p>
+<ul class="ticks"><li>Up to 10 goals with progress bars</li><li>Need-per-month and projected finish date</li><li>On track / Behind / Reached status</li><li>Saved-per-goal-by-month heatmap</li><li>Withdrawals handled automatically</li></ul>
+<p class="cta-compat">Excel 2016+ and Google Sheets · no macros · sample data included · one-time $5</p>
+<div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/wrechx" rel="noopener">Get the savings goal tracker — $5</a><a class="btn ghost" href="/templates/">Browse all templates</a></div>
+</div></aside>
+
+<div class="endcta"><p><strong>Want this done for you?</strong> The Savings Goal Tracker tracks up to 10 goals from one deposit log, with the need-per-month and on-track maths built in.</p><div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/wrechx" rel="noopener">See the savings goal tracker on Gumroad</a><a class="btn ghost" href="/templates/">All templates</a></div></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><details><summary>What is a sinking fund?</summary><p>A sinking fund is money you set aside each month for a specific expense you know is coming, such as an annual insurance premium or holiday gifts, so you can pay it in full when it arrives.</p></details><details><summary>How many sinking funds should I have?</summary><p>Start with three to five covering your biggest irregular costs. You can add more once the habit sticks. Too many small funds make tracking tedious.</p></details><details><summary>Should sinking funds be in separate bank accounts?</summary><p>They don’t need to be. One savings account plus a ledger that tags each deposit to a goal works well, as long as the total of your goals matches the account balance.</p></details><details><summary>Is a sinking fund the same as an emergency fund?</summary><p>No. An emergency fund covers unpredictable events and ideally stays untouched. Sinking funds cover predictable expenses and are meant to be spent.</p></details><details><summary>How do I calculate how much to save each month?</summary><p>Subtract what you’ve already saved from the target, then divide by the number of months until you need the money. Recalculate whenever the target, date or balance changes.</p></details></section>
+</div>
+</div>
+</article>
+<section class="wrap related" aria-labelledby="rel-h"><h2 id="rel-h">More guides</h2><ul><li><a href="/guides/monthly-budget-planner-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to make a monthly budget in Excel, step by step</span><span class="rel-m">7-minute read</span></a></li><li><a href="/guides/christmas-gift-budget-excel/"><span class="rel-k">Holidays</span><span class="rel-t">How to set a Christmas gift budget per person</span><span class="rel-m">5-minute read</span></a></li><li><a href="/guides/paycheck-to-paycheck-budget-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to budget by paycheck, including biweekly pay</span><span class="rel-m">6-minute read</span></a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 Dave Lim · Guides are general information, not financial, tax or investment advice.</span><span class="foot-links"><a href="/guides/">All guides</a><a href="/templates/">Templates</a></span></div></footer>
+<script src="/guides/guides.js" defer></script>
+</body>
+</html>

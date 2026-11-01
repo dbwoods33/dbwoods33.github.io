@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debt Snowball vs Avalanche: Which Pays Off Faster? (Worked Example) — Field Notes</title>
+<meta name="description" content="A worked, month-by-month example of the debt snowball and avalanche methods on the same four debts: payoff dates, total interest and which one to choose. Numbers checked to the cent.">
+<link rel="canonical" href="https://dbwoods33.github.io/guides/debt-payoff-tracker-excel/">
+<meta name="theme-color" content="#f4f5f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#181c1a" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article"><meta property="og:url" content="https://dbwoods33.github.io/guides/debt-payoff-tracker-excel/"><meta property="og:site_name" content="Field Notes">
+<meta property="og:title" content="Debt Snowball vs Avalanche: Which Pays Off Faster? (Worked Example)"><meta property="og:description" content="A worked, month-by-month example of the debt snowball and avalanche methods on the same four debts: payoff dates, total interest and which one to choose. Numbers checked to the cent.">
+<meta property="og:image" content="https://dbwoods33.github.io/guides/img/debt-payoff-tracker-excel-hero.jpg"><meta property="og:image:width" content="1400"><meta property="og:image:height" content="1120"><meta property="og:image:alt" content="Debt Payoff Tracker spreadsheet template for Excel and Google Sheets">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Debt Snowball vs Avalanche: Which Pays Off Faster? (Worked Example)"><meta name="twitter:description" content="A worked, month-by-month example of the debt snowball and avalanche methods on the same four debts: payoff dates, total interest and which one to choose. Numbers checked to the cent."><meta name="twitter:image" content="https://dbwoods33.github.io/guides/img/debt-payoff-tracker-excel-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232926'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%23f4f5f1'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/guides/guides.css">
+<script>try{const t=localStorage.getItem('fn-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t)}catch(e){}</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Debt snowball vs avalanche: which pays off faster?", "description": "A worked, month-by-month example of the debt snowball and avalanche methods on the same four debts: payoff dates, total interest and which one to choose. Numbers checked to the cent.", "image": ["https://dbwoods33.github.io/guides/img/debt-payoff-tracker-excel-hero.jpg"], "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "author": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "publisher": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dbwoods33.github.io/guides/debt-payoff-tracker-excel/"}, "wordCount": 1308}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which is faster, snowball or avalanche?", "acceptedAnswer": {"@type": "Answer", "text": "With the same monthly payment, the avalanche method is never slower and never costs more interest, because it always targets the most expensive balance. In practice the difference is often small, sometimes only a month or less."}}, {"@type": "Question", "name": "Why do people choose the debt snowball if it costs more?", "acceptedAnswer": {"@type": "Answer", "text": "Because paying off a whole account early is motivating, and motivation is what keeps people paying for years. Research on consumer debt has found that closing individual accounts is linked to a higher chance of eliminating debt altogether."}}, {"@type": "Question", "name": "Should I include my mortgage in the snowball?", "acceptedAnswer": {"@type": "Answer", "text": "Most people leave the mortgage out and focus on consumer debts like credit cards, personal loans and car loans. Mortgages usually have lower rates and much longer terms."}}, {"@type": "Question", "name": "What if two debts have the same interest rate?", "acceptedAnswer": {"@type": "Answer", "text": "Pay the smaller balance first. It frees up its minimum payment sooner, which helps either method."}}, {"@type": "Question", "name": "How much extra should I pay each month?", "acceptedAnswer": {"@type": "Answer", "text": "As much as you can sustain without new borrowing. In the example, $300 extra cut the payoff time from 56 months to about 25 and saved more than $3,000 in interest compared with minimums."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dbwoods33.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://dbwoods33.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "Snowball vs avalanche", "item": "https://dbwoods33.github.io/guides/debt-payoff-tracker-excel/"}]}]</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="head"><div class="head-in"><a class="brand" href="/"><span class="mark">F</span><span>Field Notes</span></a><nav class="nav" aria-label="Site"><a class="essays" href="/">Essays</a><a href="/templates/">Templates</a><a href="/guides/" aria-current="page">Guides</a><button type="button" id="themeToggle">Dark</button></nav></div></header>
+<main id="main">
+<article>
+<header class="wrap ahero">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span>Snowball vs avalanche</span></nav>
+<p class="kicker">Debt</p>
+<h1>Debt snowball vs avalanche: which pays off faster?</h1>
+<p class="deck">The avalanche method is mathematically cheaper. The snowball method gets your first win much sooner. Here is exactly how big the difference is on a realistic set of debts, and how to decide.</p>
+<p class="meta"><span>By Dave Lim</span><span>Updated <time datetime="2026-11-01">November 2026</time></span><span>6-minute read</span></p>
+</header>
+<div class="wrap agrid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary><ol><li><a href="#the-example-four-debts-and-905-a-month">The example: four debts and $905 a month</a></li><li><a href="#month-1-side-by-side">Month 1, side by side</a></li><li><a href="#the-results">The results</a></li><li><a href="#when-the-gap-gets-bigger-or-disappears">When the gap gets bigger, or disappears</a></li><li><a href="#which-should-you-choose">Which should you choose?</a></li><li><a href="#rules-that-matter-more-than-the-method">Rules that matter more than the method</a></li><li><a href="#how-to-track-it-in-a-spreadsheet">How to track it in a spreadsheet</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></nav>
+<div class="prose">
+<section class="takeaways" aria-label="Key takeaways"><p class="tk-h">The short version</p><ul><li><strong>Avalanche</strong> (highest interest rate first) always costs the least interest. In our example it saves $429.69 and finishes one month sooner.</li><li><strong>Snowball</strong> (smallest balance first) delivers the first paid-off debt in month 3 instead of month 16.</li><li>Either method beats minimum payments by a wide margin: 26 or 25 months instead of 56, and less than half the interest.</li><li>What matters most is the total you pay each month and rolling freed-up payments into the next debt. Pick the method you will stick with.</li></ul></section>
+
+<p>Both methods share the same core: pay the minimum on every debt, throw every extra dollar at one target debt, and when that debt is gone, roll its payment into the next one. The only difference is the order.</p>
+<ul>
+<li><strong>Debt snowball:</strong> target the <em>smallest balance</em> first, regardless of interest rate.</li>
+<li><strong>Debt avalanche:</strong> target the <em>highest interest rate (APR)</em> first, regardless of balance.</li>
+</ul>
+<p>Arguments about which is “better” are usually abstract. So let’s run both on the same debts, month by month, and look at the actual numbers.</p>
+
+<h2 id="the-example-four-debts-and-905-a-month">The example: four debts and $905 a month</h2>
+<p>Imagine someone with $19,800 of debt spread across four accounts. Their minimums add up to $605 a month, and they can find an extra $300, so they commit $905 a month to debt until it’s all gone.</p>
+<div class="tbl"><table><caption>The example debts</caption><thead><tr><th>Debt</th><th class="n">Balance</th><th class="n">APR</th><th class="n">Minimum</th><th>Snowball order</th><th>Avalanche order</th></tr></thead><tbody><tr><th scope="row">Store card</th><td class="n">$800</td><td class="n">21%</td><td class="n">$30</td><td>1st</td><td>2nd</td></tr><tr><th scope="row">Personal loan</th><td class="n">$3,000</td><td class="n">8%</td><td class="n">$90</td><td>2nd</td><td>3rd</td></tr><tr><th scope="row">Credit card</th><td class="n">$6,500</td><td class="n">24%</td><td class="n">$195</td><td>3rd</td><td>1st</td></tr><tr><th scope="row">Car loan</th><td class="n">$9,500</td><td class="n">6.5%</td><td class="n">$290</td><td>4th</td><td>4th</td></tr></tbody><tfoot><tr><th scope="row">Total</th><td class="n">$19,800</td><td class="n"></td><td class="n">$605</td><td></td><td></td></tr></tfoot></table></div><p class="tbl-note">Monthly budget for debt: $605 of minimums + $300 extra = $905, held constant until everything is paid.</p>
+<p>Notice that the two methods disagree about where to start. The store card has the smallest balance (snowball’s pick), but the credit card has the highest rate (avalanche’s pick). If your smallest debt also had your highest rate, both methods would choose the same order and produce identical results.</p>
+<h3>How the calculation works</h3>
+<p>Each month, interest is added to every balance at APR ÷ 12, rounded to the cent. Then every debt gets its minimum payment, and whatever is left of the $905 goes to the target debt. When a debt is paid off, its minimum stays in the $905 and flows to the next target. That roll-over is what makes both methods accelerate.</p>
+
+<h2 id="month-1-side-by-side">Month 1, side by side</h2>
+<p><strong>Snowball:</strong> the store card accrues $14.00 of interest ($800 × 21% ÷ 12), taking it to $814.00. It gets its $30 minimum plus the full $300 extra, $330 in all, leaving <strong>$484.00</strong>. The other three debts get their minimums.</p>
+<p><strong>Avalanche:</strong> the credit card accrues $130.00 ($6,500 × 24% ÷ 12), taking it to $6,630.00. It gets $195 plus the $300 extra, $495 in all, leaving <strong>$6,135.00</strong>.</p>
+<p>The snowball has already cut a balance by about 40%. The avalanche has barely dented its target, but that target is the one charging $130 a month in interest.</p>
+
+<h2 id="the-results">The results</h2>
+<div class="tbl"><table><caption>Results, paying $905 a month</caption><thead><tr><th></th><th class="n">Snowball</th><th class="n">Avalanche</th></tr></thead><tbody><tr><th scope="row">First debt paid off</th><td class="n">Store card, month 3</td><td class="n">Credit card, month 16</td></tr><tr><th scope="row">Store card paid off</th><td class="n">Month 3</td><td class="n">Month 17</td></tr><tr><th scope="row">Personal loan paid off</th><td class="n">Month 10</td><td class="n">Month 20</td></tr><tr><th scope="row">Credit card paid off</th><td class="n">Month 21</td><td class="n">Month 16</td></tr><tr><th scope="row">Car loan paid off (debt-free)</th><td class="n">Month 26</td><td class="n">Month 25</td></tr><tr><th scope="row">Total interest paid</th><td class="n">$2,865.91</td><td class="n">$2,436.22</td></tr><tr><th scope="row">Total paid</th><td class="n">$22,665.91</td><td class="n">$22,236.22</td></tr></tbody></table></div><p class="tbl-note">Avalanche saves $429.69 in interest and finishes one month sooner. Paying only the minimums, with nothing extra and no roll-over, would take 56 months and cost $5,996.29 in interest.</p>
+<p>So the avalanche wins on cost, as it always will: by attacking the 24% card first, it shrinks the most expensive balance soonest. But look at the payoff pattern. The snowballer closes an account in month 3 and another in month 10. The avalanche user waits until month 16 for their first payoff, more than a year of sending money in with no account closed.</p>
+<p>In this example the price of those early wins is $429.69 over roughly two years, or about $16.53 a month. That is real money, but it’s also small compared with the $3,130.38 the snowball saves versus paying minimums.</p>
+<figure class="shot"><img src="/guides/img/debt-payoff-tracker-excel-f1.webp" alt="Payoff plan tab comparing snowball and avalanche: debt-free date, months, total interest and monthly budget for each, plus the payoff order with a paid-off-by month per debt" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The Debt Payoff Tracker runs both strategies on your own debts and shows the payoff order and a paid-off date for each one. (Template sample data, not the example above.)</figcaption></figure>
+
+<h2 id="when-the-gap-gets-bigger-or-disappears">When the gap gets bigger, or disappears</h2>
+<p>The difference between the methods depends on your debts:</p>
+<ul>
+<li><strong>The gap grows</strong> when your largest balance also has your highest rate, for example a big credit card at 25% and a small loan at 5%. Snowball leaves the expensive balance compounding for longer.</li>
+<li><strong>The gap shrinks</strong> when interest rates are close together, or when your smallest balances happen to carry your highest rates.</li>
+<li><strong>The gap is zero</strong> when both rules give the same order.</li>
+<li><strong>Extra payment size matters more than order.</strong> Raising the extra payment from $300 to $400 would change the result far more than switching methods.</li>
+</ul>
+<p>Run your own numbers before you decide. If the avalanche saves $40, the motivation of the snowball is probably worth it. If it saves $4,000, it probably isn’t.</p>
+
+<h2 id="which-should-you-choose">Which should you choose?</h2>
+<p>Choose the <strong>avalanche</strong> if you are motivated by numbers, your high-rate debts are large, or the interest gap is significant. Choose the <strong>snowball</strong> if you’ve tried before and lost momentum, you have several small balances you could clear quickly, or the interest difference is small.</p>
+<p>There is research behind the snowball’s appeal. A 2012 study by David Gal and Blakeley McShane in the <em>Journal of Marketing Research</em> found that consumers who closed more individual accounts were more likely to go on to eliminate their debt, even after accounting for the amounts involved. Progress you can see seems to keep people going.</p>
+<p>A practical <strong>hybrid</strong>: clear any very small balances first for a quick win, then switch to avalanche order for the rest.</p>
+
+<h2 id="rules-that-matter-more-than-the-method">Rules that matter more than the method</h2>
+<ul>
+<li><strong>Keep the monthly total fixed.</strong> When a debt is paid off, its payment moves to the next debt. It does not become spending money.</li>
+<li><strong>Stop adding new debt.</strong> Neither method works if balances keep growing behind you.</li>
+<li><strong>Keep a small emergency fund</strong> so a car repair doesn’t go straight back on a card.</li>
+<li><strong>Watch promotional rates.</strong> A 0% balance transfer that ends in six months should be treated by the rate it will become.</li>
+<li><strong>Never miss a minimum.</strong> Late fees and penalty rates undo months of progress.</li>
+</ul>
+
+<h2 id="how-to-track-it-in-a-spreadsheet">How to track it in a spreadsheet</h2>
+<p>You need three things: a list of debts (balance, APR, minimum), a payment log, and a month-by-month simulation for each strategy. The simulation is the tricky part. Each row needs to add interest, apply minimums, apply the extra, and roll over freed-up payments, which is where homemade spreadsheets usually break. Online calculators handle the maths but forget your progress the moment you close the tab.</p>
+<figure class="shot"><img src="/guides/img/debt-payoff-tracker-excel-f2.webp" alt="Debt payoff dashboard showing debt-free date, months to go, interest ahead and interest saved by the avalanche method" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The Dashboard: your debt-free date, months to go and interest saved, updating as you log payments.</figcaption></figure>
+<aside class="cta" aria-labelledby="cta-debt-payoff-tracker-excel">
+<a class="cta-img" href="https://dbwoods.gumroad.com/l/dqhanx" rel="noopener" tabindex="-1" aria-hidden="true"><picture><source srcset="/guides/img/debt-payoff-tracker-excel-hero.webp" type="image/webp"><img src="/guides/img/debt-payoff-tracker-excel-hero.jpg" alt="" width="1400" height="1120" loading="lazy" decoding="async"></picture></a>
+<div class="cta-body"><p class="cta-kicker">Skip the setup</p>
+<h2 class="cta-title" id="cta-debt-payoff-tracker-excel">Debt Payoff Tracker</h2>
+<p class="cta-lede">Enter your debts once and it simulates both snowball and avalanche month by month, including the roll-over, then tracks every payment you make.</p>
+<ul class="ticks"><li>Snowball and avalanche simulation side by side</li><li>Debt-free date and months to go</li><li>Interest saved comparison</li><li>Payoff order with a date for each debt</li><li>Payment log with month picker and projected balance chart</li></ul>
+<p class="cta-compat">Excel 2016+ and Google Sheets · no macros · sample data included · one-time $7</p>
+<div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/dqhanx" rel="noopener">Get the debt payoff tracker — $7</a><a class="btn ghost" href="/templates/">Browse all templates</a></div>
+</div></aside>
+
+<div class="endcta"><p><strong>Want this done for you?</strong> The Debt Payoff Tracker simulates both methods on your real debts, including the roll-over, and shows your debt-free date and interest saved as you log payments.</p><div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/dqhanx" rel="noopener">See the debt payoff tracker on Gumroad</a><a class="btn ghost" href="/templates/">All templates</a></div></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><details><summary>Which is faster, snowball or avalanche?</summary><p>With the same monthly payment, the avalanche method is never slower and never costs more interest, because it always targets the most expensive balance. In practice the difference is often small, sometimes only a month or less.</p></details><details><summary>Why do people choose the debt snowball if it costs more?</summary><p>Because paying off a whole account early is motivating, and motivation is what keeps people paying for years. Research on consumer debt has found that closing individual accounts is linked to a higher chance of eliminating debt altogether.</p></details><details><summary>Should I include my mortgage in the snowball?</summary><p>Most people leave the mortgage out and focus on consumer debts like credit cards, personal loans and car loans. Mortgages usually have lower rates and much longer terms.</p></details><details><summary>What if two debts have the same interest rate?</summary><p>Pay the smaller balance first. It frees up its minimum payment sooner, which helps either method.</p></details><details><summary>How much extra should I pay each month?</summary><p>As much as you can sustain without new borrowing. In the example, $300 extra cut the payoff time from 56 months to about 25 and saved more than $3,000 in interest compared with minimums.</p></details></section>
+</div>
+</div>
+</article>
+<section class="wrap related" aria-labelledby="rel-h"><h2 id="rel-h">More guides</h2><ul><li><a href="/guides/paycheck-to-paycheck-budget-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to budget by paycheck, including biweekly pay</span><span class="rel-m">6-minute read</span></a></li><li><a href="/guides/monthly-budget-planner-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to make a monthly budget in Excel, step by step</span><span class="rel-m">7-minute read</span></a></li><li><a href="/guides/savings-goal-tracker-excel/"><span class="rel-k">Saving</span><span class="rel-t">How to track multiple savings goals and sinking funds</span><span class="rel-m">5-minute read</span></a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 Dave Lim · Guides are general information, not financial, tax or investment advice.</span><span class="foot-links"><a href="/guides/">All guides</a><a href="/templates/">Templates</a></span></div></footer>
+<script src="/guides/guides.js" defer></script>
+</body>
+</html>

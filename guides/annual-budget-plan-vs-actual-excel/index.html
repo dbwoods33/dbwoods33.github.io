@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan vs Actual: How to Track a Yearly Budget (With Examples) — Field Notes</title>
+<meta name="description" content="How to build a 12-month budget, compare plan vs actual by month and year-to-date, read variances correctly and handle seasonal costs. Worked example and Excel formulas.">
+<link rel="canonical" href="https://dbwoods33.github.io/guides/annual-budget-plan-vs-actual-excel/">
+<meta name="theme-color" content="#f4f5f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#181c1a" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article"><meta property="og:url" content="https://dbwoods33.github.io/guides/annual-budget-plan-vs-actual-excel/"><meta property="og:site_name" content="Field Notes">
+<meta property="og:title" content="Plan vs Actual: How to Track a Yearly Budget (With Examples)"><meta property="og:description" content="How to build a 12-month budget, compare plan vs actual by month and year-to-date, read variances correctly and handle seasonal costs. Worked example and Excel formulas.">
+<meta property="og:image" content="https://dbwoods33.github.io/guides/img/annual-budget-plan-vs-actual-excel-hero.jpg"><meta property="og:image:width" content="1400"><meta property="og:image:height" content="1120"><meta property="og:image:alt" content="Annual Budget Plan vs Actual spreadsheet template for Excel and Google Sheets">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Plan vs Actual: How to Track a Yearly Budget (With Examples)"><meta name="twitter:description" content="How to build a 12-month budget, compare plan vs actual by month and year-to-date, read variances correctly and handle seasonal costs. Worked example and Excel formulas."><meta name="twitter:image" content="https://dbwoods33.github.io/guides/img/annual-budget-plan-vs-actual-excel-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232926'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%23f4f5f1'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/guides/guides.css">
+<script>try{const t=localStorage.getItem('fn-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t)}catch(e){}</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Plan vs actual: how to track a yearly budget", "description": "How to build a 12-month budget, compare plan vs actual by month and year-to-date, read variances correctly and handle seasonal costs. Worked example and Excel formulas.", "image": ["https://dbwoods33.github.io/guides/img/annual-budget-plan-vs-actual-excel-hero.jpg"], "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "author": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "publisher": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dbwoods33.github.io/guides/annual-budget-plan-vs-actual-excel/"}, "wordCount": 1293}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does plan vs actual mean in budgeting?", "acceptedAnswer": {"@type": "Answer", "text": "It means comparing the amount you planned to spend in each category with what you actually spent, for the same period. The difference is the variance. Tracking it by month and year-to-date shows whether you are on course for the year."}}, {"@type": "Question", "name": "Is a positive variance good or bad?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the convention. With Variance = Plan − Actual, as used in this guide, a positive number on spending means you spent less than planned, which is usually good. Always label your sheet so the sign is unambiguous."}}, {"@type": "Question", "name": "How do I budget for expenses that happen once a year?", "acceptedAnswer": {"@type": "Answer", "text": "Put the full amount in the month it is due in your annual plan, and set aside one-twelfth of it each month in a sinking fund so the cash is there when the bill arrives."}}, {"@type": "Question", "name": "Should I change my budget halfway through the year?", "acceptedAnswer": {"@type": "Answer", "text": "Keep the original plan for comparison and add a forecast for the remaining months. Re-planning is healthy; losing the record of what you originally intended is not."}}, {"@type": "Question", "name": "What is a good variance tolerance?", "acceptedAnswer": {"@type": "Answer", "text": "Many households treat anything within about 5–10% of plan as on track. Look harder at categories that are over in most months, even if each month’s overspend is small."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dbwoods33.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://dbwoods33.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "Plan vs actual", "item": "https://dbwoods33.github.io/guides/annual-budget-plan-vs-actual-excel/"}]}]</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="head"><div class="head-in"><a class="brand" href="/"><span class="mark">F</span><span>Field Notes</span></a><nav class="nav" aria-label="Site"><a class="essays" href="/">Essays</a><a href="/templates/">Templates</a><a href="/guides/" aria-current="page">Guides</a><button type="button" id="themeToggle">Dark</button></nav></div></header>
+<main id="main">
+<article>
+<header class="wrap ahero">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span>Plan vs actual</span></nav>
+<p class="kicker">Budgeting</p>
+<h1>Plan vs actual: how to track a yearly budget</h1>
+<p class="deck">A monthly budget tells you about this month. A yearly plan-versus-actual view tells you whether the year is going to work, early enough to do something about it.</p>
+<p class="meta"><span>By Dave Lim</span><span>Updated <time datetime="2026-11-01">November 2026</time></span><span>6-minute read</span></p>
+</header>
+<div class="wrap agrid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary><ol><li><a href="#why-a-yearly-budget-is-not-12-copies-of-a-monthl">Why a yearly budget is not 12 copies of a monthly one</a></li><li><a href="#step-1-build-the-12-month-plan">Step 1: Build the 12-month plan</a></li><li><a href="#step-2-record-actual-spending-by-month">Step 2: Record actual spending by month</a></li><li><a href="#step-3-calculate-variance-the-same-way-every-tim">Step 3: Calculate variance the same way every time</a></li><li><a href="#step-4-compare-year-to-date-with-a-worked-exampl">Step 4: Compare year-to-date, with a worked example</a></li><li><a href="#step-5-read-the-variance-by-month">Step 5: Read the variance by month</a></li><li><a href="#keep-the-original-plan-add-a-forecast">Keep the original plan, add a forecast</a></li><li><a href="#a-simple-review-rhythm">A simple review rhythm</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></nav>
+<div class="prose">
+<section class="takeaways" aria-label="Key takeaways"><p class="tk-h">The short version</p><ul><li>Plan all 12 months up front, with higher amounts in the months where costs really land (December gifts, summer utilities).</li><li>Compare <strong>plan to date</strong> with <strong>actual to date</strong>, not actual with one-twelfth of the annual total.</li><li>Variance = plan − actual. Positive means under plan; negative means over. Pick one convention and stick to it.</li><li>Review monthly, act quarterly: small persistent variances matter more than one bad month.</li></ul></section>
+
+<p>Monthly budgeting is good at answering “can I afford this today?” It is bad at answering “am I on track for the year?” A December full of gifts, a summer of air-conditioning bills or an annual insurance premium can make a perfectly healthy year look like a disaster in one month, and a slow leak in a single category can hide for months.</p>
+<p>A <strong>plan-versus-actual</strong> budget fixes that. You set a plan for every month of the year, record what you actually spend, and compare the two both for the month and year-to-date. Companies call this variance analysis. It works just as well for a household.</p>
+
+<h2 id="why-a-yearly-budget-is-not-12-copies-of-a-monthl">Why a yearly budget is not 12 copies of a monthly one</h2>
+<p>If you divide every category by twelve, you build in two errors. Seasonal costs get smeared across the year, so you look over budget in December and under budget every other month. And you never see a slow drift, because each month is judged on its own.</p>
+<p>A good annual plan does two things differently:</p>
+<ul>
+<li><strong>It is shaped.</strong> Each category has an amount per month that reflects when the money actually goes out.</li>
+<li><strong>It accumulates.</strong> You compare running totals (January to now) so small monthly overspends add up into something you can see.</li>
+</ul>
+
+<h2 id="step-1-build-the-12-month-plan">Step 1: Build the 12-month plan</h2>
+<p>Lay out a grid with categories down the side and January to December across the top. Start each row with a typical monthly amount, then overwrite the months that are different. In a spreadsheet, a simple pattern keeps this fast: put the typical amount in column C and fill each month with <code>=$C5</code>, then type over the exceptions.</p>
+<p>Good candidates for shaping:</p>
+<ul>
+<li><strong>Utilities:</strong> heating or cooling peaks.</li>
+<li><strong>Gifts and holidays:</strong> December, plus birthdays you can predict.</li>
+<li><strong>Insurance, registrations and memberships</strong> that bill once or twice a year.</li>
+<li><strong>Travel:</strong> the months you actually go.</li>
+</ul>
+<p>Add a total column with <code>=SUM(D5:O5)</code>. That annual figure is your real budget for the category.</p>
+
+<h2 id="step-2-record-actual-spending-by-month">Step 2: Record actual spending by month</h2>
+<p>Keep a single transaction log (date, description, category, amount) and let formulas build the actuals grid. For a category in <code>A5</code> and a month whose first day sits in row 4, use:</p>
+<pre class="formula">=SUMIFS(Tx[Amount], Tx[Category], $A5,
+        Tx[Date], "&gt;="&amp;D$4, Tx[Date], "&lt;"&amp;EDATE(D$4,1))</pre>
+<p>The mixed references (<code>$A5</code> and <code>D$4</code>) let you fill the formula across all twelve months and down all categories in one drag.</p>
+
+<h2 id="step-3-calculate-variance-the-same-way-every-tim">Step 3: Calculate variance the same way every time</h2>
+<p>Variance is simply the difference between plan and actual. The only hard part is the sign. This guide uses:</p>
+<pre class="formula">Variance = Plan − Actual</pre>
+<p>so a <strong>positive</strong> number means you spent less than planned and a <strong>negative</strong> number means you overspent. Some people prefer the opposite. Either is fine as long as the whole sheet agrees and your colours match (green for under plan, red for over).</p>
+<p>Also calculate a percentage, because a $50 overspend means something very different on groceries than on rent:</p>
+<pre class="formula">=IF(Plan=0, "", (Plan−Actual)/Plan)</pre>
+
+<h2 id="step-4-compare-year-to-date-with-a-worked-exampl">Step 4: Compare year-to-date, with a worked example</h2>
+<p>Here’s a household at the end of September. Most categories have a flat plan, but utilities peak in winter and summer, and gifts jump to $600 in December.</p>
+<div class="tbl"><table><caption>Plan vs actual, January to September</caption><thead><tr><th>Category</th><th class="n">Annual plan</th><th class="n">Plan to date</th><th class="n">Actual to date</th><th class="n">Variance</th></tr></thead><tbody><tr><th scope="row">Groceries</th><td class="n">$7,200</td><td class="n">$5,400</td><td class="n">$5,790</td><td class="n neg">−$390</td></tr><tr><th scope="row">Dining out</th><td class="n">$2,400</td><td class="n">$1,800</td><td class="n">$2,140</td><td class="n neg">−$340</td></tr><tr><th scope="row">Transport</th><td class="n">$3,000</td><td class="n">$2,250</td><td class="n">$2,080</td><td class="n pos">+$170</td></tr><tr><th scope="row">Utilities</th><td class="n">$1,860</td><td class="n">$1,400</td><td class="n">$1,460</td><td class="n neg">−$60</td></tr><tr><th scope="row">Gifts &amp; holidays</th><td class="n">$1,700</td><td class="n">$900</td><td class="n">$820</td><td class="n pos">+$80</td></tr></tbody><tfoot><tr><th scope="row">Total</th><td class="n">$16,160</td><td class="n">$11,750</td><td class="n">$12,290</td><td class="n neg">−$540</td></tr></tfoot></table></div><p class="tbl-note">Variance = plan to date minus actual to date. Positive (green) means under plan; negative means over.</p>
+<p>A few things this table makes obvious that a monthly view would hide:</p>
+<ul>
+<li><strong>Groceries are $390 over plan</strong>, about 7.2% above the $5,400 planned to date. No single month looked alarming, but the drift is steady.</li>
+<li><strong>Dining out is $340 over</strong>, which on a $1,800 plan to date is nearly 19%. That is the category to look at first.</li>
+<li><strong>Gifts look $80 under</strong>, but that is only because the plan to date excludes December’s $600. Comparing with one-twelfth of the annual total ($1,700 ÷ 12 × 9 = $1,275) would have suggested $455 of slack that doesn’t exist.</li>
+</ul>
+<p>That last point is why shaped plans matter. The plan-to-date column is <code>=SUM</code> of January to September in the plan grid, not the annual total scaled down.</p>
+<h3>Projecting the year</h3>
+<p>For flat categories you can project a full-year figure from the pace so far: <code>Actual to date ÷ months elapsed × 12</code>. Groceries: $5,790 ÷ 9 × 12 = $7,720, which is $520 over the $7,200 annual plan if nothing changes. Don’t use this shortcut for seasonal categories; it would project December’s gifts as if they were spread evenly.</p>
+<figure class="shot"><img src="/guides/img/annual-budget-plan-vs-actual-excel-f1.webp" alt="Plan vs actual table in the Annual Budget template with plan, actual, variance and year-to-date columns and an Over, On plan or Under status per category" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>Plan vs actual by category in the Annual Budget template: month and year-to-date side by side, with status flags.</figcaption></figure>
+
+<h2 id="step-5-read-the-variance-by-month">Step 5: Read the variance by month</h2>
+<p>A grid of monthly variances, coloured green for under and red for over, is the fastest way to tell a one-off from a trend. One red cell in March is a car repair. A row that is red in seven of nine months is a plan that doesn’t match reality.</p>
+<figure class="shot"><img src="/guides/img/annual-budget-plan-vs-actual-excel-f2.webp" alt="Variance heatmap grid with categories down the side and months across, cells shaded green when under plan and red when over" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The variance heatmap: plan minus actual for every category and month. Green is under plan, red is over.</figcaption></figure>
+<p>When a category is consistently over, you have two honest options. Change the behaviour (cook more, cancel something), or change the plan and find the money elsewhere. Pretending the plan is still right is the only wrong answer.</p>
+
+<h2 id="keep-the-original-plan-add-a-forecast">Keep the original plan, add a forecast</h2>
+<p>When you re-plan mid-year, don’t overwrite the original budget. Keep it, and add a separate forecast for the remaining months. That way you can still answer “how did we do against what we intended?” at year end, and you learn which categories you consistently under-estimate. Those are the ones to plan more generously next January.</p>
+
+<h2 id="a-simple-review-rhythm">A simple review rhythm</h2>
+<ul>
+<li><strong>Monthly (10 minutes):</strong> check this month’s variance and the year-to-date total. Note anything unusual.</li>
+<li><strong>Quarterly (30 minutes):</strong> look for categories over plan in two or more of the last three months and decide: change behaviour or change the plan.</li>
+<li><strong>Annually:</strong> build next year’s plan from this year’s actuals, not from last year’s plan.</li>
+</ul>
+<aside class="cta" aria-labelledby="cta-annual-budget-plan-vs-actual-excel">
+<a class="cta-img" href="https://dbwoods.gumroad.com/l/alytwq" rel="noopener" tabindex="-1" aria-hidden="true"><picture><source srcset="/guides/img/annual-budget-plan-vs-actual-excel-hero.webp" type="image/webp"><img src="/guides/img/annual-budget-plan-vs-actual-excel-hero.jpg" alt="" width="1400" height="1120" loading="lazy" decoding="async"></picture></a>
+<div class="cta-body"><p class="cta-kicker">Skip the setup</p>
+<h2 class="cta-title" id="cta-annual-budget-plan-vs-actual-excel">Annual Budget Spreadsheet</h2>
+<p class="cta-lede">A ready-made 12-month plan with seasonal overrides, a transaction log, and plan vs actual for the month and year-to-date, without building the grids yourself.</p>
+<ul class="ticks"><li>12-month plan with seasonal overrides</li><li>Month and year-to-date plan vs actual by category</li><li>Over / on plan / under status flags</li><li>Variance heatmap by category and month</li><li>Cumulative plan vs actual chart</li></ul>
+<p class="cta-compat">Excel 2016+ and Google Sheets · no macros · sample data included · one-time $9</p>
+<div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/alytwq" rel="noopener">Get the annual budget — $9</a><a class="btn ghost" href="/templates/">Browse all templates</a></div>
+</div></aside>
+
+<div class="endcta"><p><strong>Want this done for you?</strong> The Annual Budget Spreadsheet gives you the 12-month plan, actuals grid, variance heatmap and year-to-date comparison ready to fill in.</p><div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/alytwq" rel="noopener">See the annual budget on Gumroad</a><a class="btn ghost" href="/templates/">All templates</a></div></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><details><summary>What does plan vs actual mean in budgeting?</summary><p>It means comparing the amount you planned to spend in each category with what you actually spent, for the same period. The difference is the variance. Tracking it by month and year-to-date shows whether you are on course for the year.</p></details><details><summary>Is a positive variance good or bad?</summary><p>It depends on the convention. With Variance = Plan − Actual, as used in this guide, a positive number on spending means you spent less than planned, which is usually good. Always label your sheet so the sign is unambiguous.</p></details><details><summary>How do I budget for expenses that happen once a year?</summary><p>Put the full amount in the month it is due in your annual plan, and set aside one-twelfth of it each month in a sinking fund so the cash is there when the bill arrives.</p></details><details><summary>Should I change my budget halfway through the year?</summary><p>Keep the original plan for comparison and add a forecast for the remaining months. Re-planning is healthy; losing the record of what you originally intended is not.</p></details><details><summary>What is a good variance tolerance?</summary><p>Many households treat anything within about 5–10% of plan as on track. Look harder at categories that are over in most months, even if each month’s overspend is small.</p></details></section>
+</div>
+</div>
+</article>
+<section class="wrap related" aria-labelledby="rel-h"><h2 id="rel-h">More guides</h2><ul><li><a href="/guides/monthly-budget-planner-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to make a monthly budget in Excel, step by step</span><span class="rel-m">7-minute read</span></a></li><li><a href="/guides/savings-goal-tracker-excel/"><span class="rel-k">Saving</span><span class="rel-t">How to track multiple savings goals and sinking funds</span><span class="rel-m">5-minute read</span></a></li><li><a href="/guides/small-business-bookkeeping-excel/"><span class="rel-k">Small business</span><span class="rel-t">Simple bookkeeping for a small business, in a spreadsheet</span><span class="rel-m">6-minute read</span></a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 Dave Lim · Guides are general information, not financial, tax or investment advice.</span><span class="foot-links"><a href="/guides/">All guides</a><a href="/templates/">Templates</a></span></div></footer>
+<script src="/guides/guides.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Keep a Trading Journal: Win Rate, R-Multiple &amp; Expectancy Explained — Field Notes</title>
+<meta name="description" content="What to record in a trading journal and how to calculate win rate, R-multiple, expectancy, profit factor and drawdown, with a worked example. Educational, not investment advice.">
+<link rel="canonical" href="https://dbwoods33.github.io/guides/trading-journal-excel/">
+<meta name="theme-color" content="#f4f5f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#181c1a" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article"><meta property="og:url" content="https://dbwoods33.github.io/guides/trading-journal-excel/"><meta property="og:site_name" content="Field Notes">
+<meta property="og:title" content="How to Keep a Trading Journal: Win Rate, R-Multiple &amp; Expectancy Explained"><meta property="og:description" content="What to record in a trading journal and how to calculate win rate, R-multiple, expectancy, profit factor and drawdown, with a worked example. Educational, not investment advice.">
+<meta property="og:image" content="https://dbwoods33.github.io/guides/img/trading-journal-excel-hero.jpg"><meta property="og:image:width" content="1400"><meta property="og:image:height" content="1120"><meta property="og:image:alt" content="Trading Journal spreadsheet template for Excel and Google Sheets">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Keep a Trading Journal: Win Rate, R-Multiple &amp; Expectancy Explained"><meta name="twitter:description" content="What to record in a trading journal and how to calculate win rate, R-multiple, expectancy, profit factor and drawdown, with a worked example. Educational, not investment advice."><meta name="twitter:image" content="https://dbwoods33.github.io/guides/img/trading-journal-excel-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232926'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%23f4f5f1'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/guides/guides.css">
+<script>try{const t=localStorage.getItem('fn-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t)}catch(e){}</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "How to keep a trading journal: the metrics that matter", "description": "What to record in a trading journal and how to calculate win rate, R-multiple, expectancy, profit factor and drawdown, with a worked example. Educational, not investment advice.", "image": ["https://dbwoods33.github.io/guides/img/trading-journal-excel-hero.jpg"], "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "author": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "publisher": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dbwoods33.github.io/guides/trading-journal-excel/"}, "wordCount": 1419}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What should be in a trading journal?", "acceptedAnswer": {"@type": "Answer", "text": "At minimum: date, instrument, side, setup, entry, stop, exit, quantity, fees and a tag for whether you followed your plan. The stop price is essential, because it defines your risk and lets you calculate R-multiples."}}, {"@type": "Question", "name": "What is an R-multiple in trading?", "acceptedAnswer": {"@type": "Answer", "text": "An R-multiple is a trade’s profit or loss divided by the amount risked on it, where risk is the distance from entry to stop multiplied by position size. A trade that makes twice what it risked is +2R."}}, {"@type": "Question", "name": "How do you calculate trading expectancy?", "acceptedAnswer": {"@type": "Answer", "text": "Expectancy = (win rate × average win) − (loss rate × average loss). It equals total profit or loss divided by the number of trades, and can be expressed in dollars or in R."}}, {"@type": "Question", "name": "What is a good win rate for trading?", "acceptedAnswer": {"@type": "Answer", "text": "There isn’t one on its own. Whether a win rate is good depends on the size of your average win relative to your average loss. A 35–40% win rate can be profitable with large winners; a high win rate can lose money with occasional large losses."}}, {"@type": "Question", "name": "What is profit factor?", "acceptedAnswer": {"@type": "Answer", "text": "Profit factor is gross profit divided by gross loss over a set of trades. Above 1 means the trades made more than they lost; below 1 means they lost money overall."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dbwoods33.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://dbwoods33.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "Trading journal", "item": "https://dbwoods33.github.io/guides/trading-journal-excel/"}]}]</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="head"><div class="head-in"><a class="brand" href="/"><span class="mark">F</span><span>Field Notes</span></a><nav class="nav" aria-label="Site"><a class="essays" href="/">Essays</a><a href="/templates/">Templates</a><a href="/guides/" aria-current="page">Guides</a><button type="button" id="themeToggle">Dark</button></nav></div></header>
+<main id="main">
+<article>
+<header class="wrap ahero">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span>Trading journal</span></nav>
+<p class="kicker">Trading</p>
+<h1>How to keep a trading journal: the metrics that matter</h1>
+<p class="deck">A trading journal turns a pile of wins and losses into evidence. Here’s what to log on every trade, and the handful of numbers that tell you whether your approach has an edge.</p>
+<p class="meta"><span>By Dave Lim</span><span>Updated <time datetime="2026-11-01">November 2026</time></span><span>6-minute read</span></p>
+</header>
+<div class="wrap agrid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary><ol><li><a href="#what-to-record-on-every-trade">What to record on every trade</a></li><li><a href="#r-multiple-measure-every-trade-in-units-of-risk">R-multiple: measure every trade in units of risk</a></li><li><a href="#win-rate-expectancy-and-profit-factor-worked-thr">Win rate, expectancy and profit factor, worked through</a></li><li><a href="#drawdown-and-the-equity-curve">Drawdown and the equity curve</a></li><li><a href="#slice-your-results-to-find-what-works">Slice your results to find what works</a></li><li><a href="#a-weekly-review-routine">A weekly review routine</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></nav>
+<div class="prose">
+<section class="takeaways" aria-label="Key takeaways"><p class="tk-h">The short version</p><ul><li>Log every closed trade: date, instrument, side, setup, entry, stop, exit, size, fees, and a note on whether you followed your plan.</li><li>Measure results in <strong>R</strong>: profit or loss divided by the amount you risked. It makes trades of different sizes comparable.</li><li><strong>Win rate means little alone.</strong> Expectancy combines win rate with average win and loss size to show the average result per trade.</li><li>Judge a setup on dozens of trades, not a handful, and review by setup and by mistake tag.</li></ul></section>
+
+<div class="note"><strong>Educational only</strong>This guide explains record-keeping and performance arithmetic. It is not investment advice and doesn’t recommend any strategy, security or position size. Trading involves substantial risk of loss.</div>
+<p>Most traders remember their best trades and their worst ones. The hundreds in between, the ones that decide whether an approach works, blur together. A trading journal fixes that by writing everything down at the time, so you can later measure what actually happened instead of what it felt like.</p>
+<p>This guide covers what to record, how to calculate the core performance metrics by hand or in a spreadsheet, and how to review your journal so it changes what you do next.</p>
+
+<h2 id="what-to-record-on-every-trade">What to record on every trade</h2>
+<p>Record each trade when you close it, while the reasoning is fresh. The essentials:</p>
+<ul>
+<li><strong>Date</strong> and <strong>instrument</strong> (ticker, pair or contract)</li>
+<li><strong>Side</strong>: long or short</li>
+<li><strong>Setup</strong>: the named pattern or reason for the trade, chosen from a short fixed list</li>
+<li><strong>Entry price</strong>, <strong>stop price</strong> and <strong>exit price</strong></li>
+<li><strong>Quantity</strong> and <strong>fees</strong></li>
+<li><strong>Tag</strong>: did you follow your plan, or was it FOMO, an early exit, a moved stop, an oversized position?</li>
+<li><strong>Notes</strong>: one line on what you saw and what you’d do differently</li>
+</ul>
+<p>The stop price is the one people skip, and it’s the one you need most. Without it you can’t calculate risk, and without risk you can’t calculate R.</p>
+<p>Keep setups and tags to a fixed drop-down list. Free-typed labels (“breakout”, “Breakout”, “BO”) split your statistics into meaningless pieces.</p>
+
+<h2 id="r-multiple-measure-every-trade-in-units-of-risk">R-multiple: measure every trade in units of risk</h2>
+<p><strong>R</strong> is the amount you planned to lose if the trade hit your stop. Every result is then expressed as a multiple of that risk:</p>
+<pre class="formula">Risk (1R)   = |Entry − Stop| × Quantity
+R-multiple  = P/L ÷ Risk</pre>
+<p>Example: you buy 100 shares at $50 with a stop at $48. Your risk is $2 × 100 = <strong>$200</strong>. You sell at $55 for a $500 gain, which is <strong>+2.5R</strong>. Had the stop been hit, the loss would have been −$200, or −1R.</p>
+<p>R matters because it makes trades comparable. A $500 win means one thing on a $200 risk and something else on a $2,000 risk. It also exposes discipline problems: losses much bigger than −1R mean stops weren’t honoured.</p>
+<p>In a spreadsheet, with entry in <code>F2</code>, exit in <code>G2</code>, stop in <code>H2</code>, quantity in <code>E2</code>, fees in <code>I2</code> and side in <code>C2</code>:</p>
+<pre class="formula">P/L:  =IF(C2="Short", F2-G2, G2-F2)*E2 - I2
+R:    =IFERROR(J2/(ABS(F2-H2)*E2), "")</pre>
+<p>Here <code>J2</code> is the P/L cell. Because fees are subtracted from P/L, R reflects your net result.</p>
+
+<h2 id="win-rate-expectancy-and-profit-factor-worked-thr">Win rate, expectancy and profit factor, worked through</h2>
+<p>Take ten hypothetical trades, each risking $200:</p>
+<div class="tbl"><table><caption>Ten trades, risking $200 (1R) on each</caption><thead><tr><th>#</th><th>Setup</th><th class="n">Result (R)</th><th class="n">P/L</th></tr></thead><tbody><tr><th scope="row">1</th><td>Breakout</td><td class="n pos">+2.0R</td><td class="n pos">+$400</td></tr><tr><th scope="row">2</th><td>Pullback</td><td class="n neg">-1.0R</td><td class="n neg">−$200</td></tr><tr><th scope="row">3</th><td>Breakout</td><td class="n neg">-1.0R</td><td class="n neg">−$200</td></tr><tr><th scope="row">4</th><td>Pullback</td><td class="n pos">+1.5R</td><td class="n pos">+$300</td></tr><tr><th scope="row">5</th><td>Reversal</td><td class="n neg">-1.0R</td><td class="n neg">−$200</td></tr><tr><th scope="row">6</th><td>Breakout</td><td class="n pos">+3.0R</td><td class="n pos">+$600</td></tr><tr><th scope="row">7</th><td>Range</td><td class="n neg">-0.5R</td><td class="n neg">−$100</td></tr><tr><th scope="row">8</th><td>Pullback</td><td class="n neg">-1.0R</td><td class="n neg">−$200</td></tr><tr><th scope="row">9</th><td>Range</td><td class="n pos">+1.0R</td><td class="n pos">+$200</td></tr><tr><th scope="row">10</th><td>Reversal</td><td class="n neg">-1.0R</td><td class="n neg">−$200</td></tr></tbody><tfoot><tr><th scope="row"></th><td>Total</td><td class="n pos">+2.0R</td><td class="n pos">+$400</td></tr></tfoot></table></div><p class="tbl-note">Hypothetical trades for illustration only. Fees are ignored here to keep the arithmetic visible.</p>
+<p>Only four of ten trades won, yet the account is up $400. Here’s why:</p>
+<div class="tbl"><table><caption>What those ten trades tell you</caption><thead><tr><th>Metric</th><th>Formula</th><th>Value</th></tr></thead><tbody><tr><th scope="row">Win rate</th><td>wins ÷ trades</td><td>4 ÷ 10 = 40%</td></tr><tr><th scope="row">Average win</th><td>total won ÷ wins</td><td>7.5R ÷ 4 = 1.875R ($375)</td></tr><tr><th scope="row">Average loss</th><td>total lost ÷ losses</td><td>5.5R ÷ 6 = 0.92R ($183)</td></tr><tr><th scope="row">Expectancy</th><td>win% × avg win − loss% × avg loss</td><td>0.4 × 1.875 − 0.6 × 0.917 = 0.20R ($40 per trade)</td></tr><tr><th scope="row">Profit factor</th><td>gross wins ÷ gross losses</td><td>7.5 ÷ 5.5 = 1.36</td></tr><tr><th scope="row">Break-even win rate</th><td>avg loss ÷ (avg win + avg loss)</td><td>0.917 ÷ 2.792 = 32.8%</td></tr></tbody></table></div>
+<h3>Win rate</h3>
+<p>The percentage of trades that made money. It’s the number people quote most and the least useful on its own. A 40% win rate is excellent if winners are much bigger than losers, and a 70% win rate can lose money if the occasional loss is huge.</p>
+<h3>Expectancy</h3>
+<p>The average amount you make or lose per trade. You can calculate it two equivalent ways: <em>win rate × average win − loss rate × average loss</em>, or simply <em>total P/L ÷ number of trades</em>. Here both give <strong>+0.2R</strong>, or $40 per trade (+2R ÷ 10 = 0.2R). Positive expectancy over a meaningful sample is what “having an edge” means in numbers.</p>
+<h3>Profit factor</h3>
+<p>Gross profit divided by gross loss: $1,500 ÷ $1,100 = 1.36. Anything above 1 is profitable before costs; below 1 is losing.</p>
+<h3>Break-even win rate</h3>
+<p>Given your average win and loss, the win rate at which expectancy is zero. With wins averaging 1.875R and losses 0.917R, you break even at 32.8%. At 40% this sample is above it. If your average win shrinks, the break-even rate rises. This is a useful way to see how much room for error you have.</p>
+<figure class="shot"><img src="/guides/img/trading-journal-excel-f1.webp" alt="Trading Journal dashboard with win rate, average R, profit factor, expectancy, average win to average loss and maximum drawdown cards" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The Trading Journal Dashboard calculates win rate, average R, profit factor, expectancy and max drawdown from your trade log. (Template sample data.)</figcaption></figure>
+
+<h2 id="drawdown-and-the-equity-curve">Drawdown and the equity curve</h2>
+<p>Add a running <strong>equity</strong> column: starting balance plus the cumulative sum of P/L. Charting it shows the path your account actually took, which matters as much as where it ended.</p>
+<p><strong>Maximum drawdown</strong> is the largest fall from a peak to a later low. If equity climbed to $27,400 and then fell to $25,900 before recovering, the drawdown was $1,500, or 5.5% of the peak. Large or long drawdowns are where traders abandon sound plans, so knowing your typical drawdown in advance helps you stick to one.</p>
+
+<h2 id="slice-your-results-to-find-what-works">Slice your results to find what works</h2>
+<p>Overall stats tell you whether you’re profitable. Breakdowns tell you <em>why</em>. Calculate trades, win rate, total P/L and average R by:</p>
+<ul>
+<li><strong>Setup:</strong> often one or two setups carry the results and another quietly loses money.</li>
+<li><strong>Side:</strong> long vs short.</li>
+<li><strong>Day of week</strong> or time of day.</li>
+<li><strong>Tag:</strong> compare “followed plan” trades with FOMO, revenge or oversized trades. This is usually the most eye-opening view.</li>
+</ul>
+<p><code>COUNTIFS</code>, <code>SUMIFS</code> and <code>AVERAGEIFS</code> do all of this from the trade log. For example, average R for one setup: <code>=AVERAGEIFS(R_col, Setup_col, "Breakout")</code>.</p>
+<p>Be careful with small samples. Ten trades, like the example above, prove nothing; a few lucky outcomes can swing every number. Look for patterns that persist across dozens of trades per setup before you change your approach.</p>
+<figure class="shot"><img src="/guides/img/trading-journal-excel-f2.webp" alt="Weekly equity curve chart next to a performance-by-setup table and a bar chart of net P/L by setup" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>Equity curve and performance by setup: see which setups actually pay.</figcaption></figure>
+
+<h2 id="a-weekly-review-routine">A weekly review routine</h2>
+<ol>
+<li>Make sure every closed trade is logged with its stop, setup and tag.</li>
+<li>Check the week’s P/L in R, win rate and largest loss. Was any loss worse than −1R? Why?</li>
+<li>Review trades tagged as anything other than “followed plan”. What triggered them?</li>
+<li>Monthly, compare setups. Is there one you should stop trading, or trade smaller?</li>
+<li>Write one rule for next week, and only one.</li>
+</ol>
+<p>The goal of a journal isn’t to admire statistics. It’s to make one specific change at a time and see whether the numbers improve.</p>
+<aside class="cta" aria-labelledby="cta-trading-journal-excel">
+<a class="cta-img" href="https://dbwoods.gumroad.com/l/ssouxu" rel="noopener" tabindex="-1" aria-hidden="true"><picture><source srcset="/guides/img/trading-journal-excel-hero.webp" type="image/webp"><img src="/guides/img/trading-journal-excel-hero.jpg" alt="" width="1400" height="1120" loading="lazy" decoding="async"></picture></a>
+<div class="cta-body"><p class="cta-kicker">Skip the setup</p>
+<h2 class="cta-title" id="cta-trading-journal-excel">Trading Journal</h2>
+<p class="cta-lede">A trade log that calculates P/L, R-multiple, result and running equity automatically, plus the analytics from this guide by setup, side, weekday and tag.</p>
+<ul class="ticks"><li>Automatic P/L, R-multiple and running equity, with fees</li><li>Win rate, profit factor and expectancy</li><li>Weekly equity curve and maximum drawdown</li><li>Stats by setup, side, weekday and tag</li><li>Long and short support, monthly P/L heatmap</li></ul>
+<p class="cta-compat">Excel 2016+ and Google Sheets · no macros · sample data included · one-time $19</p>
+<div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/ssouxu" rel="noopener">Get the trading journal — $19</a><a class="btn ghost" href="/templates/">Browse all templates</a></div>
+</div></aside>
+
+<div class="endcta"><p><strong>Want this done for you?</strong> The Trading Journal calculates P/L, R, expectancy, profit factor and drawdown from your trade log, and breaks results down by setup, side, weekday and tag.</p><div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/ssouxu" rel="noopener">See the trading journal on Gumroad</a><a class="btn ghost" href="/templates/">All templates</a></div></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><details><summary>What should be in a trading journal?</summary><p>At minimum: date, instrument, side, setup, entry, stop, exit, quantity, fees and a tag for whether you followed your plan. The stop price is essential, because it defines your risk and lets you calculate R-multiples.</p></details><details><summary>What is an R-multiple in trading?</summary><p>An R-multiple is a trade’s profit or loss divided by the amount risked on it, where risk is the distance from entry to stop multiplied by position size. A trade that makes twice what it risked is +2R.</p></details><details><summary>How do you calculate trading expectancy?</summary><p>Expectancy = (win rate × average win) − (loss rate × average loss). It equals total profit or loss divided by the number of trades, and can be expressed in dollars or in R.</p></details><details><summary>What is a good win rate for trading?</summary><p>There isn’t one on its own. Whether a win rate is good depends on the size of your average win relative to your average loss. A 35–40% win rate can be profitable with large winners; a high win rate can lose money with occasional large losses.</p></details><details><summary>What is profit factor?</summary><p>Profit factor is gross profit divided by gross loss over a set of trades. Above 1 means the trades made more than they lost; below 1 means they lost money overall.</p></details></section>
+</div>
+</div>
+</article>
+<section class="wrap related" aria-labelledby="rel-h"><h2 id="rel-h">More guides</h2><ul><li><a href="/guides/small-business-bookkeeping-excel/"><span class="rel-k">Small business</span><span class="rel-t">Simple bookkeeping for a small business, in a spreadsheet</span><span class="rel-m">6-minute read</span></a></li><li><a href="/guides/habit-tracker-excel/"><span class="rel-k">Habits</span><span class="rel-t">How to build a habit tracker that actually works</span><span class="rel-m">6-minute read</span></a></li><li><a href="/guides/savings-goal-tracker-excel/"><span class="rel-k">Saving</span><span class="rel-t">How to track multiple savings goals and sinking funds</span><span class="rel-m">5-minute read</span></a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 Dave Lim · Guides are general information, not financial, tax or investment advice.</span><span class="foot-links"><a href="/guides/">All guides</a><a href="/templates/">Templates</a></span></div></footer>
+<script src="/guides/guides.js" defer></script>
+</body>
+</html>

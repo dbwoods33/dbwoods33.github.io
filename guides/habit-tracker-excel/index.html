@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Build a Habit Tracker That Actually Works (Streaks Done Right) — Field Notes</title>
+<meta name="description" content="Why most habit trackers get abandoned, and how to build one that lasts: choosing habits, minimum versions, streak formulas in Excel and Google Sheets, monthly goals and the never-miss-twice rule.">
+<link rel="canonical" href="https://dbwoods33.github.io/guides/habit-tracker-excel/">
+<meta name="theme-color" content="#f4f5f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#181c1a" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article"><meta property="og:url" content="https://dbwoods33.github.io/guides/habit-tracker-excel/"><meta property="og:site_name" content="Field Notes">
+<meta property="og:title" content="How to Build a Habit Tracker That Actually Works (Streaks Done Right)"><meta property="og:description" content="Why most habit trackers get abandoned, and how to build one that lasts: choosing habits, minimum versions, streak formulas in Excel and Google Sheets, monthly goals and the never-miss-twice rule.">
+<meta property="og:image" content="https://dbwoods33.github.io/guides/img/habit-tracker-excel-hero.jpg"><meta property="og:image:width" content="1400"><meta property="og:image:height" content="1120"><meta property="og:image:alt" content="Habit Tracker spreadsheet template for Excel and Google Sheets">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Build a Habit Tracker That Actually Works (Streaks Done Right)"><meta name="twitter:description" content="Why most habit trackers get abandoned, and how to build one that lasts: choosing habits, minimum versions, streak formulas in Excel and Google Sheets, monthly goals and the never-miss-twice rule."><meta name="twitter:image" content="https://dbwoods33.github.io/guides/img/habit-tracker-excel-hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232926'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='40' fill='%23f4f5f1'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/guides/guides.css">
+<script>try{const t=localStorage.getItem('fn-theme');if(t==='dark'||t==='light')document.documentElement.classList.add(t)}catch(e){}</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "How to build a habit tracker that actually works", "description": "Why most habit trackers get abandoned, and how to build one that lasts: choosing habits, minimum versions, streak formulas in Excel and Google Sheets, monthly goals and the never-miss-twice rule.", "image": ["https://dbwoods33.github.io/guides/img/habit-tracker-excel-hero.jpg"], "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "author": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "publisher": {"@type": "Person", "name": "Dave Lim", "url": "https://dbwoods33.github.io/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dbwoods33.github.io/guides/habit-tracker-excel/"}, "wordCount": 1309}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take to form a habit?", "acceptedAnswer": {"@type": "Answer", "text": "It varies widely. In a well-known 2010 study from University College London, it took participants between 18 and 254 days for a new daily behaviour to become automatic, with a median of 66 days."}}, {"@type": "Question", "name": "How many habits should I track at once?", "acceptedAnswer": {"@type": "Answer", "text": "Three to five is a good range. Fewer habits mean a faster daily check-in and more attention for each one. Add new habits as others become automatic."}}, {"@type": "Question", "name": "Does missing one day ruin a habit?", "acceptedAnswer": {"@type": "Answer", "text": "No. The same UCL study found that missing a single opportunity did not materially affect habit formation. What matters is getting back to it quickly, which is why “never miss twice” is a useful rule."}}, {"@type": "Question", "name": "How do I calculate a streak in Excel or Google Sheets?", "acceptedAnswer": {"@type": "Answer", "text": "Add a helper row under each habit. The first cell is 1 if ticked, otherwise 0; each following cell is the previous cell plus 1 if ticked, otherwise 0. The best streak is the MAX of that row."}}, {"@type": "Question", "name": "Is a paper or spreadsheet habit tracker better?", "acceptedAnswer": {"@type": "Answer", "text": "Paper is visible and satisfying to tick; a spreadsheet calculates streaks, completion rates and yearly trends for you. Use whichever you’ll look at every day."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dbwoods33.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://dbwoods33.github.io/guides/"}, {"@type": "ListItem", "position": 3, "name": "Habit tracker", "item": "https://dbwoods33.github.io/guides/habit-tracker-excel/"}]}]</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="head"><div class="head-in"><a class="brand" href="/"><span class="mark">F</span><span>Field Notes</span></a><nav class="nav" aria-label="Site"><a class="essays" href="/">Essays</a><a href="/templates/">Templates</a><a href="/guides/" aria-current="page">Guides</a><button type="button" id="themeToggle">Dark</button></nav></div></header>
+<main id="main">
+<article>
+<header class="wrap ahero">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span>Habit tracker</span></nav>
+<p class="kicker">Habits</p>
+<h1>How to build a habit tracker that actually works</h1>
+<p class="deck">A habit tracker is simple: a grid of habits and days, and a tick when you do the thing. The hard part is designing it so a bad day doesn’t end the whole project.</p>
+<p class="meta"><span>By Dave Lim</span><span>Updated <time datetime="2026-11-01">November 2026</time></span><span>6-minute read</span></p>
+</header>
+<div class="wrap agrid">
+<nav class="toc" aria-label="On this page"><details open><summary>On this page</summary><ol><li><a href="#what-the-research-says-about-forming-habits">What the research says about forming habits</a></li><li><a href="#step-1-choose-fewer-clearer-habits">Step 1: Choose fewer, clearer habits</a></li><li><a href="#step-2-build-the-monthly-grid">Step 2: Build the monthly grid</a></li><li><a href="#step-3-count-streaks-with-a-helper-row">Step 3: Count streaks with a helper row</a></li><li><a href="#step-4-score-with-a-monthly-goal-not-perfection">Step 4: Score with a monthly goal, not perfection</a></li><li><a href="#step-5-review-weekly-adjust-monthly">Step 5: Review weekly, adjust monthly</a></li><li><a href="#common-reasons-trackers-get-abandoned">Common reasons trackers get abandoned</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></details></nav>
+<div class="prose">
+<section class="takeaways" aria-label="Key takeaways"><p class="tk-h">The short version</p><ul><li>Track <strong>three to five habits</strong>, not fifteen. Each should be specific enough to tick yes or no.</li><li>Give every habit a <strong>minimum version</strong> you can do on your worst day, and a cue that triggers it.</li><li>Streaks motivate, but all-or-nothing streaks backfire. Pair them with a monthly goal (say 80% of days) and a <strong>never miss twice</strong> rule.</li><li>Research suggests habits take weeks to months to become automatic, and that missing a single day doesn’t derail the process.</li></ul></section>
+
+<p>Habit trackers have a predictable life cycle. A burst of enthusiasm, a beautifully formatted grid with fourteen habits, a perfect first week, a missed Tuesday, and by the third week the sheet hasn’t been opened.</p>
+<p>The tracker didn’t fail because tracking doesn’t work. It failed because of the design: too many habits, goals too vague to tick, and a scoring system where one missed day felt like losing everything. This guide covers how to choose habits, how to build the grid and streak formulas in a spreadsheet, and how to score progress so you keep going.</p>
+
+<h2 id="what-the-research-says-about-forming-habits">What the research says about forming habits</h2>
+<p>The most-cited study on habit formation, by Phillippa Lally and colleagues at University College London (<em>European Journal of Social Psychology</em>, 2010), followed people adopting a new daily eating, drinking or exercise behaviour. The time it took for the behaviour to become automatic varied enormously, from 18 to 254 days, with a median of 66 days.</p>
+<p>Two lessons follow. First, the popular “21 days” is optimistic; plan for a couple of months at least. Second, and more useful, the researchers found that <strong>missing a single opportunity did not materially affect</strong> the habit-forming process. Consistency over time matters; perfection doesn’t. Your tracker should reflect that.</p>
+
+<h2 id="step-1-choose-fewer-clearer-habits">Step 1: Choose fewer, clearer habits</h2>
+<p>Start with three to five. Each one should pass two tests:</p>
+<ul>
+<li><strong>Tick-able:</strong> at the end of the day, is it obviously yes or no? “Be healthier” fails; “walk 8,000 steps” passes.</li>
+<li><strong>Daily (or fixed-schedule):</strong> a grid works best for things you intend to do on specific days.</li>
+</ul>
+<p>Then give each habit a <strong>minimum version</strong>: the smallest action that still counts on a terrible day. And give it a <strong>cue</strong>: an existing moment that reminds you to do it. Psychologists call “when X happens, I will do Y” plans implementation intentions, and they reliably make follow-through more likely.</p>
+<div class="tbl"><table><caption>Turn a vague goal into a trackable habit</caption><thead><tr><th>Vague goal</th><th>Daily habit (tick-able)</th><th>Minimum version</th><th>Cue</th></tr></thead><tbody><tr><th scope="row">Get fit</th><td>Exercise 30 minutes</td><td>Put on trainers and walk 5 minutes</td><td>After I drop the kids at school</td></tr><tr><th scope="row">Read more</th><td>Read 20 pages</td><td>Read 1 page</td><td>When I get into bed</td></tr><tr><th scope="row">Be calmer</th><td>Meditate 10 minutes</td><td>Three slow breaths</td><td>After my first coffee</td></tr><tr><th scope="row">Sleep better</th><td>Phone away by 10pm</td><td>Phone charging outside the bedroom</td><td>When the 9:45pm alarm goes off</td></tr></tbody></table></div>
+<p>The minimum version is what protects your streak on a bad day. It feels like cheating, but showing up briefly keeps the routine alive, and on most days you’ll do more once you start.</p>
+
+<h2 id="step-2-build-the-monthly-grid">Step 2: Build the monthly grid</h2>
+<p>In a spreadsheet, make one tab per month. List your habits down column B, and put the days of the month across the top (columns C to AG for 31 days). Add a drop-down so each cell offers a single ✓: select the grid, then <strong>Data → Data Validation → List</strong> with <code>✓</code> as the only item. Add conditional formatting to fill ticked cells green, so the month becomes a picture of your consistency.</p>
+<p>At the end of each row, add:</p>
+<pre class="formula">Days done:   =COUNTIF(C5:AG5,"✓")
+Goal %:      =AH5/AI5</pre>
+<p>where <code>AH5</code> is days done and <code>AI5</code> is your goal for the month (see Step 4).</p>
+<figure class="shot"><img src="/guides/img/habit-tracker-excel-f1.webp" alt="Monthly habit grid for October with ticked cells in green and done, goal, goal percentage, current streak and best streak columns" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The monthly grid in the Habit Tracker: pick ✓ from the drop-down and the cell turns green. Done, goal %, current streak and best streak calculate per habit.</figcaption></figure>
+
+<h2 id="step-3-count-streaks-with-a-helper-row">Step 3: Count streaks with a helper row</h2>
+<p>A streak is the number of consecutive days a habit has been done. The simplest reliable way to calculate it works in every version of Excel and Google Sheets: a helper row underneath each habit that keeps a running count.</p>
+<pre class="formula">C6:  =IF(C5="✓",1,0)
+D6:  =IF(D5="✓",C6+1,0)     ← fill right to AG6</pre>
+<p>Each cell adds one to yesterday’s count if today is ticked, and resets to zero if it isn’t. Then:</p>
+<pre class="formula">Best streak:     =MAX(C6:AG6)
+Current streak:  =MAX(INDEX(C6:AG6,DAY(TODAY())),
+                      INDEX(C6:AG6,MAX(1,DAY(TODAY())-1)))</pre>
+<p>The current-streak formula looks at today and yesterday and takes the larger, so your streak doesn’t show zero in the morning just because you haven’t ticked today yet. It assumes the tab is for the current month. Hide the helper rows or shade them grey once they work.</p>
+
+<h2 id="step-4-score-with-a-monthly-goal-not-perfection">Step 4: Score with a monthly goal, not perfection</h2>
+<p>Streaks are motivating precisely because they’re fragile, and that’s also their weakness. When a 23-day streak breaks, it’s tempting to think the month is ruined. Two simple rules prevent that:</p>
+<ul>
+<li><strong>A monthly goal.</strong> Aim for a share of days rather than every day. At 80%, a 30-day month needs 24 days and a 31-day month needs 25 (rounding up). You can miss six days and still hit your goal.</li>
+<li><strong>Never miss twice.</strong> One missed day is noise. Two in a row is the start of a new habit, the one where you don’t do it. If you miss, the next day’s minimum version is non-negotiable.</li>
+</ul>
+<p>Track <em>best streak</em> alongside <em>current streak</em>. A broken streak still leaves your best on the board as proof of what you can do.</p>
+
+<h2 id="step-5-review-weekly-adjust-monthly">Step 5: Review weekly, adjust monthly</h2>
+<p>Once a week, look at the grid for a minute. Which habits are solid green? Which are patchy, and on which days? Patterns are usually obvious: weekends, travel, late meetings. Adjust the cue or the minimum version for those situations rather than relying on willpower.</p>
+<p>At the end of each month, compare completion rates per habit. A habit that has been above 90% for two or three months is probably becoming automatic, and you can stop tracking it and add a new one. A habit stuck below 50% needs a smaller minimum version, a better cue, or an honest decision that it isn’t a priority right now.</p>
+<p>A year view, one row per habit and one column per month with completion rates, shows the long arc that a single month can’t.</p>
+<figure class="shot"><img src="/guides/img/habit-tracker-excel-f2.webp" alt="Year heatmap with one row per habit and one column per month, shaded by completion rate" width="1400" height="1120" loading="lazy" decoding="async"><figcaption>The year heatmap: completion rate for every habit and month. Darker means more consistent.</figcaption></figure>
+
+<h2 id="common-reasons-trackers-get-abandoned">Common reasons trackers get abandoned</h2>
+<ul>
+<li><strong>Too many habits.</strong> Each one adds friction to the daily check-in.</li>
+<li><strong>Tracking outcomes instead of actions.</strong> “Lose 2 kg” isn’t a daily tick; “log meals” is.</li>
+<li><strong>Logging later.</strong> Tick at a fixed time each day, ideally next to the cue for your last habit.</li>
+<li><strong>All-or-nothing scoring.</strong> Use the monthly goal and never-miss-twice rules above.</li>
+<li><strong>Never retiring habits.</strong> Graduate the automatic ones to make room.</li>
+</ul>
+<aside class="cta" aria-labelledby="cta-habit-tracker-excel">
+<a class="cta-img" href="https://dbwoods.gumroad.com/l/fwooqn" rel="noopener" tabindex="-1" aria-hidden="true"><picture><source srcset="/guides/img/habit-tracker-excel-hero.webp" type="image/webp"><img src="/guides/img/habit-tracker-excel-hero.jpg" alt="" width="1400" height="1120" loading="lazy" decoding="async"></picture></a>
+<div class="cta-body"><p class="cta-kicker">Skip the setup</p>
+<h2 class="cta-title" id="cta-habit-tracker-excel">Habit Tracker</h2>
+<p class="cta-lede">Twelve monthly grids with ✓ drop-downs, streak and goal formulas already built, and a dashboard that shows your consistency for the whole year.</p>
+<ul class="ticks"><li>12 monthly grids with ✓ drop-downs</li><li>Current and best streak per habit</li><li>Perfect-day counter and daily % row</li><li>Year heatmap: habit × month</li><li>Completion and goal-progress charts, up to 12 editable habits</li></ul>
+<p class="cta-compat">Excel 2016+ and Google Sheets · no macros · sample data included · one-time $5</p>
+<div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/fwooqn" rel="noopener">Get the habit tracker — $5</a><a class="btn ghost" href="/templates/">Browse all templates</a></div>
+</div></aside>
+
+<div class="endcta"><p><strong>Want this done for you?</strong> The Habit Tracker has 12 monthly grids with drop-downs, streak and monthly-goal formulas, and a year heatmap, ready for up to 12 habits.</p><div class="cta-btns"><a class="btn primary" href="https://dbwoods.gumroad.com/l/fwooqn" rel="noopener">See the habit tracker on Gumroad</a><a class="btn ghost" href="/templates/">All templates</a></div></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><details><summary>How long does it take to form a habit?</summary><p>It varies widely. In a well-known 2010 study from University College London, it took participants between 18 and 254 days for a new daily behaviour to become automatic, with a median of 66 days.</p></details><details><summary>How many habits should I track at once?</summary><p>Three to five is a good range. Fewer habits mean a faster daily check-in and more attention for each one. Add new habits as others become automatic.</p></details><details><summary>Does missing one day ruin a habit?</summary><p>No. The same UCL study found that missing a single opportunity did not materially affect habit formation. What matters is getting back to it quickly, which is why “never miss twice” is a useful rule.</p></details><details><summary>How do I calculate a streak in Excel or Google Sheets?</summary><p>Add a helper row under each habit. The first cell is 1 if ticked, otherwise 0; each following cell is the previous cell plus 1 if ticked, otherwise 0. The best streak is the MAX of that row.</p></details><details><summary>Is a paper or spreadsheet habit tracker better?</summary><p>Paper is visible and satisfying to tick; a spreadsheet calculates streaks, completion rates and yearly trends for you. Use whichever you’ll look at every day.</p></details></section>
+</div>
+</div>
+</article>
+<section class="wrap related" aria-labelledby="rel-h"><h2 id="rel-h">More guides</h2><ul><li><a href="/guides/savings-goal-tracker-excel/"><span class="rel-k">Saving</span><span class="rel-t">How to track multiple savings goals and sinking funds</span><span class="rel-m">5-minute read</span></a></li><li><a href="/guides/monthly-budget-planner-excel/"><span class="rel-k">Budgeting</span><span class="rel-t">How to make a monthly budget in Excel, step by step</span><span class="rel-m">7-minute read</span></a></li><li><a href="/guides/trading-journal-excel/"><span class="rel-k">Trading</span><span class="rel-t">How to keep a trading journal: the metrics that matter</span><span class="rel-m">6-minute read</span></a></li></ul></section>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 Dave Lim · Guides are general information, not financial, tax or investment advice.</span><span class="foot-links"><a href="/guides/">All guides</a><a href="/templates/">Templates</a></span></div></footer>
+<script src="/guides/guides.js" defer></script>
+</body>
+</html>
